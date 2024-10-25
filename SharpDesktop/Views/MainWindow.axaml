@@ -1,0 +1,163 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:SharpDesktop.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+        xmlns:views="using:SharpDesktop.Views"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="SharpDesktop.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="SharpDesktop"
+        WindowStartupLocation="CenterScreen"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        ExtendClientAreaTitleBarHeightHint="-1"
+        WindowState="Maximized">
+
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
+
+	<!--内容区域-->
+	<Grid RowDefinitions="Auto,*,Auto">
+		<!-- 上半 标题栏 -->
+		<Border Grid.Row="0"
+            Height="60"
+            Background="DimGray">
+
+			<DockPanel LastChildFill="False">
+				<!-- 左半 信息栏 -->
+				<DockPanel Dock="Left">
+					<StackPanel Orientation="Horizontal">
+						<Image Source="/Assets/avalonia-logo.ico"
+							   Margin="12,1,12,1"/>
+						<TextBlock Text="SharpDesktop"
+								   FontSize="24"
+								   VerticalAlignment="Center"
+								   Margin="4,4,0,4"></TextBlock>
+					</StackPanel>
+				</DockPanel>
+
+				<!-- 中间 搜索与终端 -->
+				<DockPanel Dock="Left">
+
+				</DockPanel>
+
+				<!-- 右半 通用部分 -->
+				<DockPanel Dock="Right">
+					<StackPanel Orientation="Horizontal">
+						<Button
+							Command="{Binding MinimizeCommand}"
+                            Background="Transparent"
+                            Width="60">
+							<materialIcons:MaterialIcon
+                                Width="40"
+                                Height="40"
+                                Kind="Minus"/>
+						</Button>
+						<Button
+							Command="{Binding ConfigCommand}"
+                            Background="Transparent"
+                            Width="60">
+							<materialIcons:MaterialIcon
+								Width="40"
+								Height="40"
+                                Kind="Settings" />
+						</Button>
+						<Button
+							Command="{Binding ExitCommand}"
+                            Background="Transparent"
+                            Width="60">
+							<materialIcons:MaterialIcon
+								Width="40"
+								Height="40"
+								Kind="PresenceExit"
+                                />
+						</Button>
+					</StackPanel>
+				</DockPanel>
+			</DockPanel>
+		</Border>
+
+		<!-- 中半 内容区域 -->
+		<Border Grid.Row="1"
+                BorderThickness="0,1,0,1"
+                BorderBrush="Black">
+			<Grid ColumnDefinitions="Auto,Auto,*">
+				<!-- 工具栏 -->
+				<Border
+                    Grid.Column="0"
+                    Width="80"
+                    Background="DimGray"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,2,0"
+                    Padding="12">
+					<StackPanel Orientation="Vertical">
+                        
+					</StackPanel>
+				</Border>
+
+				<!-- 导航栏 -->
+				<Border
+                    Grid.Column="1"
+                    Width="350"
+                    Background="DimGray"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,1,0">
+
+				</Border>
+
+				<!-- 业务区域 -->
+				<Border
+                    Grid.Column="2"
+                    Background="Gray">
+
+				</Border>
+			</Grid>
+		</Border>
+
+		<!-- 下半 状态栏 -->
+		<Border Grid.Row="2"
+                Height="45"
+                Background="DimGray">
+			<DockPanel LastChildFill="False">
+				<DockPanel Dock="Left">
+					<TextBox Text="{Binding Path,Mode=TwoWay}" FontSize="18" Margin="8"/>
+				</DockPanel>
+				<DockPanel Dock="Right">
+					<StackPanel Orientation="Horizontal" Margin="6">
+						<Button Command="{Binding AboutCommand}"
+                                Margin="0,0,10,0"
+                                Background="Gray">
+							<materialIcons:MaterialIcon
+                                Height="25"
+                                Width="25"
+                                Kind="About"/>
+						</Button>
+						<Button Command="{Binding HelpCommand}"
+                                Margin="0,0,10,0"
+                                Background="Gray">
+							<materialIcons:MaterialIcon
+                                Height="25"
+                                Width="25"
+                                Kind="Help"/>
+						</Button>
+						<Button Command="{Binding RefreshCommand}"
+                                Margin="0,0,5,0"
+                                Background="Gray">
+							<materialIcons:MaterialIcon
+                                Height="25"
+                                Width="25"
+                                Kind="Refresh"/>
+						</Button>
+					</StackPanel>
+				</DockPanel>
+			</DockPanel>
+		</Border>
+	</Grid>
+
+</Window>
