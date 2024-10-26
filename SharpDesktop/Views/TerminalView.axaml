@@ -2,7 +2,79 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:vm="using:SharpDesktop.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="SharpDesktop.Views.TerminalView">
-  Welcome to Avalonia!
+             x:Class="SharpDesktop.Views.TerminalView"
+             x:DataType="vm:TerminalViewModel">
+	<Border>
+		<Grid ColumnDefinitions="Auto,*,Auto">
+			<!-- 终端命令栏 -->
+			<DockPanel
+                Grid.Column="0"
+                Dock="Left"
+                Width="350"
+                Background="Gray">
+
+			</DockPanel>
+
+			<!-- 终端界面 -->
+			<DockPanel
+                Grid.Column="1"
+                Dock="Left"
+                Background="Black"
+                x:Name="TerminalPanel">
+
+			</DockPanel>
+
+			<!-- 终端工具栏 -->
+			<DockPanel
+                Grid.Column="2"
+                Dock="Right"
+                Width="80"
+                Background="Gray">
+				<DockPanel LastChildFill="False">
+					<StackPanel Orientation="Vertical">
+                        <Button Background="Transparent"
+                                Command="{Binding NewConsoleCommand}"
+                                Margin="10,15,10,0">
+							<materialIcons:MaterialIcon
+                                Height="40"
+                                Width="40"
+                                Kind="ConsoleLine"/>
+                            <ToolTip.Tip>新建Cmd控制台</ToolTip.Tip>
+                        </Button>
+						<Button Background="Transparent"
+                                Command="{Binding NewPowerShellCommand}"
+                                Margin="10,15,10,0">
+							<materialIcons:MaterialIcon
+                                Height="40"
+                                Width="40"
+                                Kind="Powershell"/>
+                            <ToolTip.Tip>新建Powershell终端</ToolTip.Tip>
+						</Button>
+						<Button Background="Transparent"
+                                Command="{Binding NewGitBashCommand}"
+                                Margin="10,15,10,0">
+							<materialIcons:MaterialIcon
+                                Height="40"
+                                Width="40"
+                                Kind="Git"/>
+                            <ToolTip.Tip>新建GitBash终端</ToolTip.Tip>
+						</Button>
+						<Button Background="Transparent"
+                                Command="{Binding ClearCommand}"
+                                Margin="10,15,10,0">
+							<materialIcons:MaterialIcon
+                                Height="40"
+                                Width="40"
+                                Kind="GarbageCan"/>
+                            <ToolTip.Tip>清除所有终端输出</ToolTip.Tip>
+						</Button>
+                        
+					</StackPanel>
+				</DockPanel>
+			</DockPanel>
+		</Grid>
+	</Border>
 </UserControl>

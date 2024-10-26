@@ -1,10 +1,12 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:SharpDesktop.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+        xmlns:reactiveui="http://reactiveui.net"
+        xmlns:app="clr-namespace:SharpDesktop"
         xmlns:views="using:SharpDesktop.Views"
+        xmlns:vm="using:SharpDesktop.ViewModels"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="SharpDesktop.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -163,10 +165,22 @@
 				</Border>
 
 				<!-- 工作区 -->
-				<Border Grid.Column="1"
-                        Background="Gray">
-
-				</Border>
+				<reactiveui:RoutedViewHost
+                    Grid.Column="1"
+                    Router="{Binding Router}"
+                    Background="Gray">
+					<reactiveui:RoutedViewHost.DefaultContent>
+						<StackPanel VerticalAlignment="Center"
+                                    HorizontalAlignment="Center">
+							<TextBlock Text="欢迎使用SharpDesktop！(●'◡'●)"
+									   FontStretch="Expanded"
+                                     FontSize="24"/>
+						</StackPanel>
+					</reactiveui:RoutedViewHost.DefaultContent>
+					<reactiveui:RoutedViewHost.ViewLocator>
+						<app:ReactiveViewLocator/>
+					</reactiveui:RoutedViewHost.ViewLocator>
+				</reactiveui:RoutedViewHost>
 			</Grid>
 		</Border>
 

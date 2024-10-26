@@ -3,7 +3,6 @@
              x:Class="SharpDesktop.App"
              xmlns:local="using:SharpDesktop"
              xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
-			 xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
              xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              RequestedThemeVariant="Default">
 	<!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->

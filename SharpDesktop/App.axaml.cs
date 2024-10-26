@@ -15,9 +15,6 @@ namespace SharpDesktop
 
         public override void OnFrameworkInitializationCompleted()
         {
-            // зЂВс ViewModel Locator
-            var viewModelLocator = new ViewModelLocator();
-            Resources.Add("ViewModelLocator", viewModelLocator);
 
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
