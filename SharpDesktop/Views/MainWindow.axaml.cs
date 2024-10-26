@@ -9,7 +9,6 @@ namespace SharpDesktop.Views
         public MainWindow()
         {
             InitializeComponent();
-
         }
 
     }

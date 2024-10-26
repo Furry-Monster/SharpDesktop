@@ -57,16 +57,18 @@
 							<materialIcons:MaterialIcon
                                 Width="40"
                                 Height="40"
-                                Kind="Minus"/>
+                                Kind="WindowMinimize"/>
+							<ToolTip.Tip>Minimalize</ToolTip.Tip>
 						</Button>
 						<Button
-							Command="{Binding ConfigCommand}"
+							Command="{Binding MaximizeCommand}"
                             Background="Transparent"
                             Width="60">
 							<materialIcons:MaterialIcon
 								Width="40"
 								Height="40"
-                                Kind="Settings" />
+                                Kind="WindowMaximize"/>
+							<ToolTip.Tip>Maximize</ToolTip.Tip>
 						</Button>
 						<Button
 							Command="{Binding ExitCommand}"
@@ -75,8 +77,9 @@
 							<materialIcons:MaterialIcon
 								Width="40"
 								Height="40"
-								Kind="PresenceExit"
+								Kind="CloseBold"
                                 />
+							<ToolTip.Tip>Exit</ToolTip.Tip>
 						</Button>
 					</StackPanel>
 				</DockPanel>
@@ -87,7 +90,7 @@
 		<Border Grid.Row="1"
                 BorderThickness="0,1,0,1"
                 BorderBrush="Black">
-			<Grid ColumnDefinitions="Auto,Auto,*">
+			<Grid ColumnDefinitions="Auto,*">
 				<!-- 工具栏 -->
 				<Border
                     Grid.Column="0"
@@ -95,26 +98,73 @@
                     Background="DimGray"
                     BorderBrush="Black"
                     BorderThickness="0,0,2,0"
-                    Padding="12">
-					<StackPanel Orientation="Vertical">
-                        
-					</StackPanel>
+                    Padding="10,0,10,0">
+					<DockPanel LastChildFill="False">
+						<!-- 从上往下 -->
+						<DockPanel Dock="Top">
+							<StackPanel Orientation="Vertical">
+								<Button Background="Transparent"
+                                        Command="{Binding DesktopCommand}"
+                                        Margin="0,15,0,0">
+									<materialIcons:MaterialIcon
+                                        Height="40"
+                                        Width="40"
+                                        Kind="DesktopWindows"/>
+								</Button>
+								<Button Background="Transparent"
+                                        Command="{Binding ResourceCommand}"
+                                        Margin="0,15,0,0">
+									<materialIcons:MaterialIcon
+                                        Height="40"
+                                        Width="40"
+                                        Kind="Folder"/>
+								</Button>
+								<Button Background="Transparent"
+                                        Command="{Binding WorkspaceCommand}"
+                                        Margin="0,15,0,0">
+									<materialIcons:MaterialIcon
+                                        Height="40"
+                                        Width="40"
+                                        Kind="Code"/>
+								</Button>
+								<Button Background="Transparent"
+                                        Command="{Binding TerminalCommand}"
+                                        Margin="0,15,0,0">
+									<materialIcons:MaterialIcon
+                                        Height="40"
+                                        Width="40"
+                                        Kind="Terminal"/>
+								</Button>
+								<Button Background="Transparent"
+                                        Command="{Binding AiCommand}"
+                                        Margin="0,15,0,0">
+									<materialIcons:MaterialIcon
+                                        Height="40"
+                                        Width="40"
+                                        Kind="RobotExcited"/>
+								</Button>
+							</StackPanel>
+						</DockPanel>
+
+						<!-- 从下往上 -->
+						<DockPanel Dock="Bottom">
+							<StackPanel Orientation="Vertical">
+								<Button Background="Transparent"
+                                        Command="{Binding ConfigCommand}"
+                                        Margin="0,0,0,15">
+									<materialIcons:MaterialIcon
+                                        Height="40"
+                                        Width="40"
+                                        Kind="Settings"/>
+								</Button>
+							</StackPanel>
+						</DockPanel>
+					</DockPanel>
 				</Border>
 
-				<!-- 导航栏 -->
-				<Border
-                    Grid.Column="1"
-                    Width="350"
-                    Background="DimGray"
-                    BorderBrush="Black"
-                    BorderThickness="0,0,1,0">
-
-				</Border>
-
-				<!-- 业务区域 -->
-				<Border
-                    Grid.Column="2"
-                    Background="Gray">
+				<!-- 工作区 -->
+				<Border Grid.Column="1"
+                        Background="Gray">
 
 				</Border>
 			</Grid>
@@ -125,9 +175,12 @@
                 Height="45"
                 Background="DimGray">
 			<DockPanel LastChildFill="False">
+				<!-- 左半部分 -->
 				<DockPanel Dock="Left">
 					<TextBox Text="{Binding Path,Mode=TwoWay}" FontSize="18" Margin="8"/>
 				</DockPanel>
+
+				<!-- 右半部分 -->
 				<DockPanel Dock="Right">
 					<StackPanel Orientation="Horizontal" Margin="6">
 						<Button Command="{Binding AboutCommand}"
@@ -137,6 +190,7 @@
                                 Height="25"
                                 Width="25"
                                 Kind="About"/>
+							<ToolTip.Tip>About Us</ToolTip.Tip>
 						</Button>
 						<Button Command="{Binding HelpCommand}"
                                 Margin="0,0,10,0"
@@ -145,6 +199,7 @@
                                 Height="25"
                                 Width="25"
                                 Kind="Help"/>
+							<ToolTip.Tip>Open help document</ToolTip.Tip>
 						</Button>
 						<Button Command="{Binding RefreshCommand}"
                                 Margin="0,0,5,0"
@@ -153,6 +208,7 @@
                                 Height="25"
                                 Width="25"
                                 Kind="Refresh"/>
+							<ToolTip.Tip>Refresh the view</ToolTip.Tip>
 						</Button>
 					</StackPanel>
 				</DockPanel>

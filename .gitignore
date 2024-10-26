@@ -166,3 +166,6 @@ $RECYCLE.BIN/
 
 # Resharper
 *.sln.DotSettings.user
+
+# Visual Studio
+.vs
