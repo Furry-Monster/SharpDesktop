@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+        xmlns:diaglogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
         xmlns:reactiveui="http://reactiveui.net"
         xmlns:app="clr-namespace:SharpDesktop"
         xmlns:views="using:SharpDesktop.Views"
@@ -24,210 +25,221 @@
 		<vm:MainWindowViewModel/>
 	</Design.DataContext>
 
-	<!--内容区域-->
-	<Grid RowDefinitions="Auto,*,Auto">
-		<!-- 上半 标题栏 -->
-		<Border Grid.Row="0"
-            Height="60"
-            Background="DimGray">
+	<diaglogHost:DialogHost
+        IsOpen="{Binding IsSettingOpen}"
+        DialogMargin="8"
+        DisableOpeningAnimation="True"
+        diaglogHost:DialogHostStyle.CornerRadius="8"
+        Background="DimGray">
+		<!-- 设置弹窗 -->
+		<diaglogHost:DialogHost.DialogContent>
+			<views:SettingView/>
+		</diaglogHost:DialogHost.DialogContent>
 
-			<DockPanel LastChildFill="False">
-				<!-- 左半 信息栏 -->
-				<DockPanel Dock="Left">
-					<StackPanel Orientation="Horizontal">
-						<Image Source="/Assets/avalonia-logo.ico"
-							   Margin="12,1,12,1"/>
-						<TextBlock Text="SharpDesktop"
-								   FontSize="24"
-								   VerticalAlignment="Center"
-								   Margin="4,4,0,4"></TextBlock>
-					</StackPanel>
-				</DockPanel>
+		<!--内容区域-->
+		<Grid RowDefinitions="Auto,*,Auto">
+			<!-- 上半 标题栏 -->
+			<Border Grid.Row="0"
+				Height="60"
+				Background="DimGray">
 
-				<!-- 中间 搜索与终端 -->
-				<DockPanel Dock="Left">
-
-				</DockPanel>
-
-				<!-- 右半 通用部分 -->
-				<DockPanel Dock="Right">
-					<StackPanel Orientation="Horizontal">
-						<Button
-							Command="{Binding MinimizeCommand}"
-                            Background="Transparent"
-                            Width="60">
-							<materialIcons:MaterialIcon
-                                Width="40"
-                                Height="40"
-                                Kind="WindowMinimize"/>
-							<ToolTip.Tip>Minimalize</ToolTip.Tip>
-						</Button>
-						<Button
-							Command="{Binding MaximizeCommand}"
-                            Background="Transparent"
-                            Width="60">
-							<materialIcons:MaterialIcon
-								Width="40"
-								Height="40"
-                                Kind="WindowMaximize"/>
-							<ToolTip.Tip>Maximize</ToolTip.Tip>
-						</Button>
-						<Button
-							Command="{Binding ExitCommand}"
-                            Background="Transparent"
-                            Width="60">
-							<materialIcons:MaterialIcon
-								Width="40"
-								Height="40"
-								Kind="CloseBold"
-                                />
-							<ToolTip.Tip>Exit</ToolTip.Tip>
-						</Button>
-					</StackPanel>
-				</DockPanel>
-			</DockPanel>
-		</Border>
-
-		<!-- 中半 内容区域 -->
-		<Border Grid.Row="1"
-                BorderThickness="0,1,0,1"
-                BorderBrush="Black">
-			<Grid ColumnDefinitions="Auto,*">
-				<!-- 工具栏 -->
-				<Border
-                    Grid.Column="0"
-                    Width="80"
-                    Background="DimGray"
-                    BorderBrush="Black"
-                    BorderThickness="0,0,2,0"
-                    Padding="10,0,10,0">
-					<DockPanel LastChildFill="False">
-						<!-- 从上往下 -->
-						<DockPanel Dock="Top">
-							<StackPanel Orientation="Vertical">
-								<Button Background="Transparent"
-                                        Command="{Binding DesktopCommand}"
-                                        Margin="0,15,0,0">
-									<materialIcons:MaterialIcon
-                                        Height="40"
-                                        Width="40"
-                                        Kind="DesktopWindows"/>
-								</Button>
-								<Button Background="Transparent"
-                                        Command="{Binding ResourceCommand}"
-                                        Margin="0,15,0,0">
-									<materialIcons:MaterialIcon
-                                        Height="40"
-                                        Width="40"
-                                        Kind="Folder"/>
-								</Button>
-								<Button Background="Transparent"
-                                        Command="{Binding WorkspaceCommand}"
-                                        Margin="0,15,0,0">
-									<materialIcons:MaterialIcon
-                                        Height="40"
-                                        Width="40"
-                                        Kind="Code"/>
-								</Button>
-								<Button Background="Transparent"
-                                        Command="{Binding TerminalCommand}"
-                                        Margin="0,15,0,0">
-									<materialIcons:MaterialIcon
-                                        Height="40"
-                                        Width="40"
-                                        Kind="Terminal"/>
-								</Button>
-								<Button Background="Transparent"
-                                        Command="{Binding AiCommand}"
-                                        Margin="0,15,0,0">
-									<materialIcons:MaterialIcon
-                                        Height="40"
-                                        Width="40"
-                                        Kind="RobotExcited"/>
-								</Button>
-							</StackPanel>
-						</DockPanel>
-
-						<!-- 从下往上 -->
-						<DockPanel Dock="Bottom">
-							<StackPanel Orientation="Vertical">
-								<Button Background="Transparent"
-                                        Command="{Binding ConfigCommand}"
-                                        Margin="0,0,0,15">
-									<materialIcons:MaterialIcon
-                                        Height="40"
-                                        Width="40"
-                                        Kind="Settings"/>
-								</Button>
-							</StackPanel>
-						</DockPanel>
-					</DockPanel>
-				</Border>
-
-				<!-- 工作区 -->
-				<reactiveui:RoutedViewHost
-                    Grid.Column="1"
-                    Router="{Binding Router}"
-                    Background="Gray">
-					<reactiveui:RoutedViewHost.DefaultContent>
-						<StackPanel VerticalAlignment="Center"
-                                    HorizontalAlignment="Center">
-							<TextBlock Text="欢迎使用SharpDesktop！(●'◡'●)"
-									   FontStretch="Expanded"
-                                     FontSize="24"/>
+				<DockPanel LastChildFill="False">
+					<!-- 左半 信息栏 -->
+					<DockPanel Dock="Left">
+						<StackPanel Orientation="Horizontal">
+							<Image Source="/Assets/avalonia-logo.ico"
+								   Margin="12,1,12,1"/>
+							<TextBlock Text="SharpDesktop"
+									   FontSize="24"
+									   VerticalAlignment="Center"
+									   Margin="4,4,0,4"></TextBlock>
 						</StackPanel>
-					</reactiveui:RoutedViewHost.DefaultContent>
-					<reactiveui:RoutedViewHost.ViewLocator>
-						<app:ReactiveViewLocator/>
-					</reactiveui:RoutedViewHost.ViewLocator>
-				</reactiveui:RoutedViewHost>
-			</Grid>
-		</Border>
+					</DockPanel>
 
-		<!-- 下半 状态栏 -->
-		<Border Grid.Row="2"
-                Height="45"
-                Background="DimGray">
-			<DockPanel LastChildFill="False">
-				<!-- 左半部分 -->
-				<DockPanel Dock="Left">
-					<TextBox Text="{Binding Path,Mode=TwoWay}" FontSize="18" Margin="8"/>
+					<!-- 中间 搜索与终端 -->
+					<DockPanel Dock="Left">
+
+					</DockPanel>
+
+					<!-- 右半 通用部分 -->
+					<DockPanel Dock="Right">
+						<StackPanel Orientation="Horizontal">
+							<Button
+								Command="{Binding MinimizeCommand}"
+								Background="Transparent"
+								Width="60">
+								<materialIcons:MaterialIcon
+									Width="40"
+									Height="40"
+									Kind="WindowMinimize"/>
+								<ToolTip.Tip>Minimalize</ToolTip.Tip>
+							</Button>
+							<Button
+								Command="{Binding MaximizeCommand}"
+								Background="Transparent"
+								Width="60">
+								<materialIcons:MaterialIcon
+									Width="40"
+									Height="40"
+									Kind="WindowMaximize"/>
+								<ToolTip.Tip>Maximize</ToolTip.Tip>
+							</Button>
+							<Button
+								Command="{Binding ExitCommand}"
+								Background="Transparent"
+								Width="60">
+								<materialIcons:MaterialIcon
+									Width="40"
+									Height="40"
+									Kind="CloseBold"
+                                />
+								<ToolTip.Tip>Exit</ToolTip.Tip>
+							</Button>
+						</StackPanel>
+					</DockPanel>
 				</DockPanel>
+			</Border>
 
-				<!-- 右半部分 -->
-				<DockPanel Dock="Right">
-					<StackPanel Orientation="Horizontal" Margin="6">
-						<Button Command="{Binding AboutCommand}"
-                                Margin="0,0,10,0"
-                                Background="Gray">
-							<materialIcons:MaterialIcon
-                                Height="25"
-                                Width="25"
-                                Kind="About"/>
-							<ToolTip.Tip>About Us</ToolTip.Tip>
-						</Button>
-						<Button Command="{Binding HelpCommand}"
-                                Margin="0,0,10,0"
-                                Background="Gray">
-							<materialIcons:MaterialIcon
-                                Height="25"
-                                Width="25"
-                                Kind="Help"/>
-							<ToolTip.Tip>Open help document</ToolTip.Tip>
-						</Button>
-						<Button Command="{Binding RefreshCommand}"
-                                Margin="0,0,5,0"
-                                Background="Gray">
-							<materialIcons:MaterialIcon
-                                Height="25"
-                                Width="25"
-                                Kind="Refresh"/>
-							<ToolTip.Tip>Refresh the view</ToolTip.Tip>
-						</Button>
-					</StackPanel>
+			<!-- 中半 内容区域 -->
+			<Border Grid.Row="1"
+					BorderThickness="0,1,0,1"
+					BorderBrush="Black">
+				<Grid ColumnDefinitions="Auto,*">
+					<!-- 工具栏 -->
+					<Border
+						Grid.Column="0"
+						Width="80"
+						Background="DimGray"
+						BorderBrush="Black"
+						BorderThickness="0,0,2,0"
+						Padding="10,0,10,0">
+						<DockPanel LastChildFill="False">
+							<!-- 从上往下 -->
+							<DockPanel Dock="Top">
+								<StackPanel Orientation="Vertical">
+									<Button Background="Transparent"
+											Command="{Binding DesktopCommand}"
+											Margin="0,15,0,0">
+										<materialIcons:MaterialIcon
+											Height="40"
+											Width="40"
+											Kind="DesktopWindows"/>
+									</Button>
+									<Button Background="Transparent"
+											Command="{Binding ResourceCommand}"
+											Margin="0,15,0,0">
+										<materialIcons:MaterialIcon
+											Height="40"
+											Width="40"
+											Kind="Folder"/>
+									</Button>
+									<Button Background="Transparent"
+											Command="{Binding WorkspaceCommand}"
+											Margin="0,15,0,0">
+										<materialIcons:MaterialIcon
+											Height="40"
+											Width="40"
+											Kind="Code"/>
+									</Button>
+									<Button Background="Transparent"
+											Command="{Binding TerminalCommand}"
+											Margin="0,15,0,0">
+										<materialIcons:MaterialIcon
+											Height="40"
+											Width="40"
+											Kind="Terminal"/>
+									</Button>
+									<Button Background="Transparent"
+											Command="{Binding AiCommand}"
+											Margin="0,15,0,0">
+										<materialIcons:MaterialIcon
+											Height="40"
+											Width="40"
+											Kind="RobotExcited"/>
+									</Button>
+								</StackPanel>
+							</DockPanel>
+
+							<!-- 从下往上 -->
+							<DockPanel Dock="Bottom">
+								<StackPanel Orientation="Vertical">
+									<Button Background="Transparent"
+											Command="{Binding ConfigCommand}"
+											Margin="0,0,0,15">
+										<materialIcons:MaterialIcon
+											Height="40"
+											Width="40"
+											Kind="Settings"/>
+									</Button>
+								</StackPanel>
+							</DockPanel>
+						</DockPanel>
+					</Border>
+
+					<!-- 工作区 -->
+					<reactiveui:RoutedViewHost
+						Grid.Column="1"
+						Router="{Binding Router}"
+						Background="Gray">
+						<reactiveui:RoutedViewHost.DefaultContent>
+							<StackPanel VerticalAlignment="Center"
+										HorizontalAlignment="Center">
+								<TextBlock Text="欢迎使用SharpDesktop！(●'◡'●)"
+										   FontStretch="Expanded"
+										 FontSize="24"/>
+							</StackPanel>
+						</reactiveui:RoutedViewHost.DefaultContent>
+						<reactiveui:RoutedViewHost.ViewLocator>
+							<app:ReactiveViewLocator/>
+						</reactiveui:RoutedViewHost.ViewLocator>
+					</reactiveui:RoutedViewHost>
+				</Grid>
+			</Border>
+
+			<!-- 下半 状态栏 -->
+			<Border Grid.Row="2"
+					Height="45"
+					Background="DimGray">
+				<DockPanel LastChildFill="False">
+					<!-- 左半部分 -->
+					<DockPanel Dock="Left">
+						<TextBox Text="{Binding Path,Mode=TwoWay}" FontSize="18" Margin="8"/>
+					</DockPanel>
+
+					<!-- 右半部分 -->
+					<DockPanel Dock="Right">
+						<StackPanel Orientation="Horizontal" Margin="6">
+							<Button Command="{Binding AboutCommand}"
+									Margin="0,0,10,0"
+									Background="Gray">
+								<materialIcons:MaterialIcon
+									Height="25"
+									Width="25"
+									Kind="About"/>
+								<ToolTip.Tip>About Us</ToolTip.Tip>
+							</Button>
+							<Button Command="{Binding HelpCommand}"
+									Margin="0,0,10,0"
+									Background="Gray">
+								<materialIcons:MaterialIcon
+									Height="25"
+									Width="25"
+									Kind="Help"/>
+								<ToolTip.Tip>Open help document</ToolTip.Tip>
+							</Button>
+							<Button Command="{Binding RefreshCommand}"
+									Margin="0,0,5,0"
+									Background="Gray">
+								<materialIcons:MaterialIcon
+									Height="25"
+									Width="25"
+									Kind="Refresh"/>
+								<ToolTip.Tip>Refresh the view</ToolTip.Tip>
+							</Button>
+						</StackPanel>
+					</DockPanel>
 				</DockPanel>
-			</DockPanel>
-		</Border>
-	</Grid>
-
+			</Border>
+		</Grid>
+	</diaglogHost:DialogHost>
 </Window>

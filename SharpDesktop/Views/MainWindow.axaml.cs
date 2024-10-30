@@ -2,6 +2,7 @@ using Avalonia.Markup.Xaml;
 using Avalonia.ReactiveUI;
 using ReactiveUI;
 using SharpDesktop.ViewModels;
+using SharpDesktop.Util;
 
 namespace SharpDesktop.Views
 {
@@ -11,7 +12,11 @@ namespace SharpDesktop.Views
         {
             this.WhenActivated(disposables => { });
             AvaloniaXamlLoader.Load(this);
-        }
 
+            // this.Closing += (sender, e) => SaveWindowSizeAndPosition();
+            //
+            // this.Loaded += MainWindow_Loaded;
+
+        }
     }
 }

@@ -4,8 +4,8 @@
              xmlns:local="using:SharpDesktop"
              xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
              xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
              RequestedThemeVariant="Default">
-	<!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
 	<Application.DataTemplates>
 		<local:ViewLocator/>
@@ -14,6 +14,7 @@
 	<Application.Styles>
 		<themes:MaterialTheme BaseTheme="Dark" PrimaryColor="Indigo" SecondaryColor="Lime"/>
 		<materialIcons:MaterialIconStyles/>
-        <StyleInclude Source="/Styles/MicrosoftIcons.axaml"/>
-    </Application.Styles>
+		<dialogHost:DialogHostStyles/>
+		<StyleInclude Source="/Styles/MicrosoftIcons.axaml"/>
+	</Application.Styles>
 </Application>

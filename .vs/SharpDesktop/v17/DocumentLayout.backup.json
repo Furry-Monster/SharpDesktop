@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\views\\terminalview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\views\\terminalview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\viewmodels\\settingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\viewmodels\\settingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\viewmodels\\terminalviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\viewmodels\\terminalviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\util\\processshell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\util\\processshell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\views\\settingview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\views\\settingview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,49 +18,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TerminalViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\ViewModels\\TerminalViewModel.cs",
-              "RelativeDocumentMoniker": "SharpDesktop\\ViewModels\\TerminalViewModel.cs",
-              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\ViewModels\\TerminalViewModel.cs",
-              "RelativeToolTip": "SharpDesktop\\ViewModels\\TerminalViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T06:19:19.736Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{08a1bf1d-7967-4afc-8253-1790862ab8c9}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TerminalView.axaml",
-              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Views\\TerminalView.axaml",
-              "RelativeDocumentMoniker": "SharpDesktop\\Views\\TerminalView.axaml",
-              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Views\\TerminalView.axaml",
-              "RelativeToolTip": "SharpDesktop\\Views\\TerminalView.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-26T05:37:16.457Z",
+              "Title": "SettingViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\ViewModels\\SettingViewModel.cs",
+              "RelativeDocumentMoniker": "SharpDesktop\\ViewModels\\SettingViewModel.cs",
+              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\ViewModels\\SettingViewModel.cs",
+              "RelativeToolTip": "SharpDesktop\\ViewModels\\SettingViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T03:22:55.818Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProcessShell.cs",
-              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Util\\ProcessShell.cs",
-              "RelativeDocumentMoniker": "SharpDesktop\\Util\\ProcessShell.cs",
-              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Util\\ProcessShell.cs",
-              "RelativeToolTip": "SharpDesktop\\Util\\ProcessShell.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T05:18:28.12Z",
+              "DocumentIndex": 1,
+              "Title": "SettingView.axaml",
+              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Views\\SettingView.axaml",
+              "RelativeDocumentMoniker": "SharpDesktop\\Views\\SettingView.axaml",
+              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Views\\SettingView.axaml",
+              "RelativeToolTip": "SharpDesktop\\Views\\SettingView.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-30T01:32:03.133Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 217,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
             }
           ]
         }

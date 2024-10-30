@@ -1,7 +1,7 @@
 ﻿using ReactiveUI;
 using System;
 using System.Windows.Input;
-using SharpDesktop.Util;
+
 
 namespace SharpDesktop.ViewModels;
 
@@ -18,7 +18,6 @@ public class TerminalViewModel : ViewModelBase, IRoutableViewModel
         NewConsoleCommand = ReactiveCommand.Create(() =>
         {
             //TODO: Open a new console window
-            
         });
 
         NewPowerShellCommand = ReactiveCommand.Create(() =>

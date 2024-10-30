@@ -10,6 +10,11 @@ namespace SharpDesktop.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase, IScreen
     {
+        // 单例模式
+        private static MainWindowViewModel? _instance;
+
+        public static MainWindowViewModel Instance => _instance ??= new MainWindowViewModel();
+
         // 页面路由
         public RoutingState Router { get; } = new RoutingState();
 
@@ -47,9 +52,7 @@ namespace SharpDesktop.ViewModels
                         MainWindow: not null
                     } desktopApp)
                 {
-                    desktopApp.MainWindow.WindowState = desktopApp.MainWindow.WindowState == WindowState.Maximized
-                        ? WindowState.Minimized
-                        : WindowState.Maximized;
+                    desktopApp.MainWindow.WindowState = WindowState.Minimized;
                 }
             });
             #endregion
@@ -89,6 +92,7 @@ namespace SharpDesktop.ViewModels
             ConfigCommand = ReactiveCommand.Create(() =>
             {
                 // TODO:打开配置窗口
+                IsSettingOpen = true;
             });
             #endregion
 
@@ -137,13 +141,20 @@ namespace SharpDesktop.ViewModels
         public ReactiveCommand<Unit, IRoutableViewModel> AiCommand { get; private set; }
 
 
-
         private string _path = "None";
 
         public string Path
         {
             get => _path;
             set => this.RaiseAndSetIfChanged(ref _path, value);
+        }
+
+        private bool _isSettingOpen = false;
+
+        public bool IsSettingOpen
+        {
+            get => _isSettingOpen;
+            set => this.RaiseAndSetIfChanged(ref _isSettingOpen, value);
         }
     }
 }

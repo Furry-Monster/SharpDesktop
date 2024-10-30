@@ -6,14 +6,13 @@
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="CustomControl\" />
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
-    <Folder Include="Util\" />
-    <Folder Include="Control\" />
-    <Folder Include="Service\" />
   </ItemGroup>
 
   <ItemGroup>
