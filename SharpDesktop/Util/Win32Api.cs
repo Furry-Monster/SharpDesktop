@@ -11,7 +11,7 @@ using System;
 
 namespace SharpDesktop.Util;
 
-public class Win32Api
+public static class Win32Api
 {
     #region Consts
 
@@ -96,7 +96,7 @@ public class Win32Api
     public static extern bool PostMessage(IntPtr hwnd, uint Msg, uint wParam, uint lParam);
 
     [DllImport("Kernel32.dll")]
-    public static extern int FormatMessage(int flag, ref IntPtr source, int msgid, int langid, ref string? buf, int size, ref IntPtr args);
+    private static extern int FormatMessage(int flag, ref IntPtr source, int msgid, int langid, ref string? buf, int size, ref IntPtr args);
 
     [DllImport("user32.dll", SetLastError = true)]
     public static extern IntPtr GetParent(IntPtr hwnd);

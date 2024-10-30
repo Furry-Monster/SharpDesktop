@@ -19,12 +19,6 @@
         ExtendClientAreaTitleBarHeightHint="-1"
         WindowState="Maximized">
 
-	<Design.DataContext>
-		<!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-		<vm:MainWindowViewModel/>
-	</Design.DataContext>
-
 	<diaglogHost:DialogHost
         IsOpen="{Binding IsSettingOpen}"
         DialogMargin="8"
@@ -54,11 +48,6 @@
 									   VerticalAlignment="Center"
 									   Margin="4,4,0,4"></TextBlock>
 						</StackPanel>
-					</DockPanel>
-
-					<!-- 中间 搜索与终端 -->
-					<DockPanel Dock="Left">
-
 					</DockPanel>
 
 					<!-- 右半 通用部分 -->
@@ -179,8 +168,7 @@
 					<!-- 工作区 -->
 					<reactiveui:RoutedViewHost
 						Grid.Column="1"
-						Router="{Binding Router}"
-						Background="Gray">
+						Router="{Binding Router}">
 						<reactiveui:RoutedViewHost.DefaultContent>
 							<StackPanel VerticalAlignment="Center"
 										HorizontalAlignment="Center">

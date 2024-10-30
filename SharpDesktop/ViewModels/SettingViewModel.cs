@@ -1,4 +1,6 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Reactive.Linq;
+using System.Windows.Input;
 using ReactiveUI;
 using SharpDesktop.Service;
 
@@ -14,7 +16,8 @@ public class SettingViewModel : ViewModelBase
             SettingService.Instance?.Save();
             // Close the setting window
             MainWindowViewModel.Instance.IsSettingOpen = false;
-        });
+
+        }, Observable.Return(true));
     }
 
     public ICommand CloseCommand { get; private set; }

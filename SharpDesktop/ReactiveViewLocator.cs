@@ -7,7 +7,7 @@ namespace SharpDesktop;
 
 internal class ReactiveViewLocator : IViewLocator
 {
-    public IViewFor? ResolveView<T>(T? viewModel, string? contract = null) => viewModel switch
+    public IViewFor ResolveView<T>(T? viewModel, string? contract = null) => viewModel switch
     {
         DesktopViewModel context => new DesktopView { DataContext = context },
         ResourceViewModel context => new ResourceView { DataContext = context },

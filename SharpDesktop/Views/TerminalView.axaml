@@ -16,7 +16,22 @@
                 Dock="Left"
                 Width="350"
                 Background="Gray">
-
+				<ItemsControl ItemsSource="{Binding QuickCommandList}">
+					<ItemsControl.ItemTemplate>
+						<DataTemplate>
+							<Border Margin="8,12,8,0"
+                                    Background="DimGray"
+                                    Padding="5">
+								<StackPanel Orientation="Horizontal">
+									<Button Background="Gray"
+											Width="322"
+                                            Content="{Binding Name}"
+                                            controls:ToolTip.Tip="{Binding Description}"/>
+								</StackPanel>
+							</Border>
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</ItemsControl>
 			</DockPanel>
 
 			<!-- 终端界面 -->
@@ -36,7 +51,7 @@
                 Grid.Column="2"
                 Dock="Right"
                 Width="80"
-                Background="Gray">
+                Background="DimGray">
 				<DockPanel LastChildFill="False">
 					<StackPanel Orientation="Vertical">
 						<Button Background="Transparent"

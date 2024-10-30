@@ -13,18 +13,29 @@
 		Height="350"
 		Width="200">
 		<Grid RowDefinitions="Auto,*">
-			<StackPanel Grid.Row="0" Orientation="Horizontal">
+			<StackPanel Grid.Row="0"
+                        Orientation="Horizontal"
+                        Height="30">
 				<TextBlock Text="Settings"
+                           Width="160"
 						   FontSize="24"/>
-				<Button Command="{Binding CloseCommand}"
-                        Margin="60,0,0,0"
-                        Background="Transparent">
-					<materialIcons:MaterialIcon Kind="CloseBold"/>
-				</Button>
+				<DockPanel Dock="Right" LastChildFill="False">
+					<Button Command="{Binding CloseCommand}"
+							Background="Transparent">
+						<materialIcons:MaterialIcon Kind="CloseBold"/>
+					</Button>
+				</DockPanel>
 			</StackPanel>
 
 			<StackPanel Grid.Row="1" Orientation="Vertical">
-                
+				<TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="正在开发中，功能近期上线"
+                           FontSize=""/>
+				<TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="这里有bug，你估计退不出去了"
+                           FontSize=""/>
 			</StackPanel>
 		</Grid>
 	</Border>

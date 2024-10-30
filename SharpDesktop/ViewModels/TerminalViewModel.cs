@@ -1,5 +1,7 @@
 ﻿using ReactiveUI;
+using SharpDesktop.Models;
 using System;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 
@@ -10,6 +12,12 @@ public class TerminalViewModel : ViewModelBase, IRoutableViewModel
     public TerminalViewModel(IScreen screen)
     {
         HostScreen = screen;
+
+        QuickCommandList =
+        [
+            new CommandItem("ls", "ls -al", "显示当前目录下的文件列表"),
+            new CommandItem("cd", @"cd /d D:\", "切换到 D 盘根目录")
+        ];
 
         //---------------
         // 工具栏命令
@@ -46,4 +54,14 @@ public class TerminalViewModel : ViewModelBase, IRoutableViewModel
     public ICommand NewPowerShellCommand { get; private set; }
     public ICommand NewGitBashCommand { get; private set; }
     public ICommand ClearCommand { get; private set; }
+
+
+
+    private ObservableCollection<CommandItem>? _quickCommandList;
+
+    public ObservableCollection<CommandItem>? QuickCommandList
+    {
+        get => _quickCommandList;
+        set => this.RaiseAndSetIfChanged(ref _quickCommandList, value);
+    }
 }

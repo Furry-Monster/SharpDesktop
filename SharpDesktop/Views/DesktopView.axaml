@@ -2,9 +2,63 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+			 xmlns:view="using:SharpDesktop.Views"
+             xmlns:vm="using:SharpDesktop.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="SharpDesktop.Views.DesktopView">
-  <Border>
-      
-  </Border>
+             x:Class="SharpDesktop.Views.DesktopView"
+             x:DataType="vm:DesktopViewModel">
+	<Border>
+		<Grid ColumnDefinitions="*,Auto">
+			<!-- 展示区 -->
+			<DockPanel Grid.Column="0"
+                       Background="Gray">
+
+			</DockPanel>
+
+			<!-- 工作区选择器 -->
+			<DockPanel Grid.Column="1"
+                       Dock="Right"
+                       Width="80"
+                       Background="DimGray"
+                       LastChildFill="False">
+				<Grid RowDefinitions="*,Auto">
+					<ScrollViewer VerticalScrollBarVisibility="Hidden">
+						<ItemsControl ItemsSource="{Binding Desktops}">
+							<ItemsControl.ItemTemplate>
+								<DataTemplate>
+									<Button Command="{Binding}"
+										    Height="80"
+											Width="80"
+											Background="Transparent"
+											Margin="0,2,0,0"
+											ToolTip.Tip="{Binding Name}">
+										<Button.CommandParameter>
+
+										</Button.CommandParameter>
+										<materialIcons:MaterialIcon
+											Height="40"
+											Width="40"
+											Kind="Package"/>
+									</Button>
+								</DataTemplate>
+							</ItemsControl.ItemTemplate>
+						</ItemsControl>
+					</ScrollViewer>
+					<DockPanel Grid.Row="1"
+                               Dock="Top">
+						<Button Background="Transparent"
+                                Command="{Binding AddDesktopCommand}"
+                                Margin="0,0,0,0">
+							<materialIcons:MaterialIcon
+                                Height="40"
+                                Width="40"
+                                Kind="Add"/>
+							<ToolTip.Tip>新建桌面</ToolTip.Tip>
+						</Button>
+					</DockPanel>
+				</Grid>
+			</DockPanel>
+		</Grid>
+	</Border>
 </UserControl>

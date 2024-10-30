@@ -4,5 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SharpDesktop.Views.AiView">
-  Welcome to Avalonia!
+  <TextBlock HorizontalAlignment="Center"
+             VerticalAlignment="Center"
+             Text="正在开发中，功能近期上线"
+             FontSize="36"/>
 </UserControl>
