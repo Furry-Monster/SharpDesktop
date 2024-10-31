@@ -4,10 +4,12 @@ using Avalonia.Controls.ApplicationLifetimes;
 using ReactiveUI;
 using System.Diagnostics;
 using System.Reactive;
+using System.Runtime.Serialization;
 using System.Windows.Input;
 
 namespace SharpDesktop.ViewModels
 {
+    [DataContract]
     public class MainWindowViewModel : ViewModelBase, IScreen
     {
         // 单例模式
@@ -20,6 +22,9 @@ namespace SharpDesktop.ViewModels
 
         public MainWindowViewModel()
         {
+            // 注册单例
+            _instance = this;
+
             // --------------------
             // 窗口命令实现
             // --------------------
@@ -151,6 +156,7 @@ namespace SharpDesktop.ViewModels
 
         private bool _isSettingOpen = false;
 
+        [DataMember]
         public bool IsSettingOpen
         {
             get => _isSettingOpen;

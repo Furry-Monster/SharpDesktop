@@ -12,10 +12,6 @@
   <ItemGroup>
     <Folder Include="CustomControl\" />
     <AvaloniaResource Include="Assets\**" />
-    <Folder Include="ViewModels\Pages\" />
-    <Folder Include="ViewModels\Components\" />
-    <Folder Include="Views\Pages\" />
-    <Folder Include="Views\Components\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +28,7 @@
     <PackageReference Include="Material.Avalonia.DataGrid" Version="3.7.4" />
     <PackageReference Include="Material.Avalonia.Dialogs" Version="3.7.4" />
     <PackageReference Include="Material.Icons.Avalonia" Version="2.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.10" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 </Project>

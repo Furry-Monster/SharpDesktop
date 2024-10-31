@@ -17,8 +17,10 @@ public class SettingViewModel : ViewModelBase
             // Close the setting window
             MainWindowViewModel.Instance.IsSettingOpen = false;
 
-        }, Observable.Return(true));
+        });
     }
 
+    // 命令
     public ICommand CloseCommand { get; private set; }
+
 }

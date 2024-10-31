@@ -54,7 +54,6 @@
                                 Height="40"
                                 Width="40"
                                 Kind="Add"/>
-							<ToolTip.Tip>新建桌面</ToolTip.Tip>
 						</Button>
 					</DockPanel>
 				</Grid>
