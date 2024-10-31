@@ -1,4 +1,4 @@
-﻿namespace SharpDesktop.Models;
+﻿namespace SharpDesktop.Models.Entity;
 
 public class CommandItem(string name, string content, string? description = null)
 {

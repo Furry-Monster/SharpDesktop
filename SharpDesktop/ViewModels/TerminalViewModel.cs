@@ -1,5 +1,5 @@
 ﻿using ReactiveUI;
-using SharpDesktop.Models;
+using SharpDesktop.Models.Entity;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;

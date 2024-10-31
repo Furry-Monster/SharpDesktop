@@ -16,7 +16,7 @@
 
 			</DockPanel>
 
-			<!-- 工作区选择器 -->
+			<!-- 选择器 -->
 			<DockPanel Grid.Column="1"
                        Dock="Right"
                        Width="80"
@@ -27,7 +27,7 @@
 						<ItemsControl ItemsSource="{Binding Desktops}">
 							<ItemsControl.ItemTemplate>
 								<DataTemplate>
-									<Button Command="{Binding}"
+									<Button Command="{Binding }"
 										    Height="80"
 											Width="80"
 											Background="Transparent"

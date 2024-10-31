@@ -12,11 +12,6 @@ namespace SharpDesktop.Views
         {
             this.WhenActivated(disposables => { });
             AvaloniaXamlLoader.Load(this);
-
-            // this.Closing += (sender, e) => SaveWindowSizeAndPosition();
-            //
-            // this.Loaded += MainWindow_Loaded;
-
         }
     }
 }
