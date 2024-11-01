@@ -121,6 +121,10 @@ namespace SharpDesktop.ViewModels
                 Router.Navigate.Execute(new TerminalViewModel(this))
             );
 
+            ToolboxCommand = ReactiveCommand.CreateFromObservable(() =>
+                Router.Navigate.Execute(new ToolboxViewModel(this))
+            );
+
             AiCommand = ReactiveCommand.CreateFromObservable(() =>
                 Router.Navigate.Execute(new AiViewModel(this))
             );
@@ -143,6 +147,7 @@ namespace SharpDesktop.ViewModels
         public ReactiveCommand<Unit, IRoutableViewModel> ResourceCommand { get; private set; }
         public ReactiveCommand<Unit, IRoutableViewModel> WorkspaceCommand { get; private set; }
         public ReactiveCommand<Unit, IRoutableViewModel> TerminalCommand { get; private set; }
+        public ReactiveCommand<Unit, IRoutableViewModel> ToolboxCommand { get; private set; }
         public ReactiveCommand<Unit, IRoutableViewModel> AiCommand { get; private set; }
 
 

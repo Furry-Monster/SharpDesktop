@@ -2,10 +2,83 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:vm="using:SharpDesktop.ViewModels"
+             xmlns:controls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="SharpDesktop.Views.ResourceView">
-	<TextBlock HorizontalAlignment="Center"
-               VerticalAlignment="Center"
-               Text="正在开发中，功能近期上线"
-               FontSize="36"/>
+             x:Class="SharpDesktop.Views.ResourceView"
+             x:DataType="vm:ResourceViewModel">
+	<Border>
+		<Grid RowDefinitions="Auto,*">
+			<!-- 顶部操作栏 -->
+			<Border Grid.Row="0"
+                    Height="60"
+                    Background="Gray"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,1">
+				<DockPanel LastChildFill="False">
+					<!-- 左半 返回 前进 -->
+					<DockPanel Dock="Left">
+						<StackPanel Orientation="Horizontal">
+							<Button Command="{Binding NavBackCommand}"
+                                    Background="Transparent">
+								<materialIcons:MaterialIcon Kind="ArrowBack"
+                                                            Height="40"
+                                                            Width="40"/>
+							</Button>
+							<Button Command="{Binding NavForwardCommand}"
+                                    Background="Transparent">
+								<materialIcons:MaterialIcon Kind="ArrowForward"
+                                                            Height="40"
+                                                            Width="40"/>
+							</Button>
+						</StackPanel>
+					</DockPanel>
+					<!-- 右半 路径 搜索 -->
+					<DockPanel Dock="Right">
+						<StackPanel Orientation="Horizontal">
+							<!-- 搜索 -->
+							<controls:ColorZone Padding="0"
+												Margin="8"
+                                                Width="250">
+								<TextBox Text="{Binding Path}"
+									     Classes="solo"
+										 Theme="{StaticResource SoloTextBox}"
+										 Watermark="Search for files"
+                                         FontSize="24">
+									<TextBox.InnerRightContent>
+										<Button Command="{Binding SearchCommand}"
+                                                CommandParameter="{Binding Path}"
+                                                Classes="Flat"
+												Padding="4"
+												Width="{Binding $self.Bounds.Height}"
+												Content="{materialIcons:MaterialIconExt Search, Size=24}" />
+									</TextBox.InnerRightContent>
+								</TextBox>
+							</controls:ColorZone>
+
+						</StackPanel>
+					</DockPanel>
+				</DockPanel>
+			</Border>
+
+			<!-- 工作区 -->
+			<Border Grid.Row="1">
+				<Grid ColumnDefinitions="Auto,*">
+					<!-- 资源列表 -->
+					<Border Grid.Column="0"
+                            Background="Gray"
+                            Width="350"
+                            Padding="20">
+
+					</Border>
+
+					<!-- 资源视图 -->
+					<Border Grid.Column="1">
+
+					</Border>
+				</Grid>
+			</Border>
+		</Grid>
+	</Border>
 </UserControl>

@@ -12,6 +12,7 @@ internal class ReactiveViewLocator : IViewLocator
         DesktopViewModel context => new DesktopView { DataContext = context },
         ResourceViewModel context => new ResourceView { DataContext = context },
         WorkspaceViewModel context => new WorkspaceView { DataContext = context },
+        ToolboxViewModel context => new ToolboxView { DataContext = context },
         TerminalViewModel context => new TerminalView { DataContext = context },
         AiViewModel context => new AiView { DataContext = context },
 

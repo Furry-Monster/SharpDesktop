@@ -24,3 +24,7 @@ Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifet
 ```
 
 在适配状态持久化的时候，没有按照生命周期启动，使用了Show函数，导致后面的功能中调用生命周期的时候，获取不到desktop，自然功能无法实现。
+
+
+
+## 如何在IViewLocator的实现类中，结合状态持久化传入ViewModel实例

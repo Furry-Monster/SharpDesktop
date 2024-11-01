@@ -3,9 +3,9 @@ using ReactiveUI;
 
 namespace SharpDesktop.ViewModels;
 
-public class AiViewModel : ViewModelBase, IRoutableViewModel
+public class ToolboxViewModel : ViewModelBase, IRoutableViewModel
 {
-    public AiViewModel(IScreen hostScreen) => HostScreen = hostScreen;
+    public ToolboxViewModel(IScreen hostScreen) => HostScreen = hostScreen;
 
     public string? UrlPathSegment { get; } = Guid.NewGuid().ToString()[..5];
     public IScreen HostScreen { get; }

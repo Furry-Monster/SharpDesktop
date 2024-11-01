@@ -4,8 +4,42 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SharpDesktop.Views.WorkspaceView">
-	<TextBlock HorizontalAlignment="Center"
-               VerticalAlignment="Center"
-               Text="正在开发中，功能近期上线"
-               FontSize="36"/>
+	<Border>
+		<Grid ColumnDefinitions="Auto,*">
+			<!-- 工作区资源树 -->
+			<Border Grid.Column="0"
+                    Background="Gray"
+                    Width="350">
+
+			</Border>
+
+			<!-- 工作区视图区 -->
+			<Border Grid.Column="1"
+                    BorderBrush="Black"
+                    BorderThickness="1,0,0,0"
+                    Background="DimGray">
+				<TabControl AutoScrollToSelectedItem="True"
+                            Theme="{StaticResource ScrollableTabControl}">
+					<TabControl.Items>
+						<TabItem Header="Item 1"
+                                 FontSize="24">
+							<TextBlock Text="Page 1"
+                                       FontSize="36"/>
+						</TabItem>
+						<TabItem Header="Item 2"
+                                 FontSize="24">
+							<TextBlock Text="Page 2"
+                                       FontSize="36"/>
+						</TabItem>
+						<TabItem Header="Item 3"
+                                 FontSize="24">
+							<TextBlock Text="Page 3"
+                                       FontSize="36"/>
+						</TabItem>
+					</TabControl.Items>
+				</TabControl>
+
+			</Border>
+		</Grid>
+	</Border>
 </UserControl>

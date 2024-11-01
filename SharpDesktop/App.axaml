@@ -17,4 +17,5 @@
 		<dialogHost:DialogHostStyles/>
 		<StyleInclude Source="/Styles/MicrosoftIcons.axaml"/>
 	</Application.Styles>
+
 </Application>

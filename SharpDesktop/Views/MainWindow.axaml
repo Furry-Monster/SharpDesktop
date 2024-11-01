@@ -138,6 +138,14 @@
 											Width="40"
 											Kind="Terminal"/>
 									</Button>
+                                    <Button Background="Transparent"
+                                            Command="{Binding ToolboxCommand}"
+                                            Margin="0,15,0,0">
+                                        <materialIcons:MaterialIcon
+                                            Height="40"
+                                            Width="40"
+                                            Kind="Tools"/>
+                                    </Button>
 									<Button Background="Transparent"
 											Command="{Binding AiCommand}"
 											Margin="0,15,0,0">
