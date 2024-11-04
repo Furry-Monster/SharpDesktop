@@ -1,7 +1,7 @@
 using Avalonia.Controls;
 using SharpDesktop.ViewModels;
 
-namespace SharpDesktop.Views;
+namespace SharpDesktop.Views.Dialog;
 
 public partial class SettingView : UserControl
 {
@@ -10,6 +10,5 @@ public partial class SettingView : UserControl
         InitializeComponent();
 
         DataContext = new SettingViewModel();
-
     }
 }

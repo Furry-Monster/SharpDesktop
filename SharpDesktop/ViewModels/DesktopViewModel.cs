@@ -56,6 +56,14 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
         set => this.RaiseAndSetIfChanged(ref _desktops, value);
     }
 
+    private bool _isModifyDesktopOpen = false;
+
+    public bool IsModifyDesktopOpen
+    {
+        get => _isModifyDesktopOpen;
+        set => this.RaiseAndSetIfChanged(ref _isModifyDesktopOpen, value);
+    }
+
     // 方法
     private void Refresh()
     {

@@ -3,10 +3,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-        xmlns:diaglogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+        xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
         xmlns:reactiveui="http://reactiveui.net"
         xmlns:app="clr-namespace:SharpDesktop"
         xmlns:views="using:SharpDesktop.Views"
+        xmlns:dialogs="using:SharpDesktop.Views.Dialog"
         xmlns:vm="using:SharpDesktop.ViewModels"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="SharpDesktop.Views.MainWindow"
@@ -19,16 +20,16 @@
         ExtendClientAreaTitleBarHeightHint="-1"
         WindowState="Maximized">
 
-	<diaglogHost:DialogHost
+	<dialogHost:DialogHost
         IsOpen="{Binding IsSettingOpen}"
         DialogMargin="8"
         DisableOpeningAnimation="True"
-        diaglogHost:DialogHostStyle.CornerRadius="8"
+        dialogHost:DialogHostStyle.CornerRadius="8"
         Background="DimGray">
 		<!-- 设置弹窗 -->
-		<diaglogHost:DialogHost.DialogContent>
-			<views:SettingView/>
-		</diaglogHost:DialogHost.DialogContent>
+		<dialogHost:DialogHost.DialogContent>
+			<dialogs:SettingView/>
+		</dialogHost:DialogHost.DialogContent>
 
 		<!--内容区域-->
 		<Grid RowDefinitions="Auto,*,Auto">
@@ -138,14 +139,14 @@
 											Width="40"
 											Kind="Terminal"/>
 									</Button>
-                                    <Button Background="Transparent"
+									<Button Background="Transparent"
                                             Command="{Binding ToolboxCommand}"
                                             Margin="0,15,0,0">
-                                        <materialIcons:MaterialIcon
+										<materialIcons:MaterialIcon
                                             Height="40"
                                             Width="40"
                                             Kind="Tools"/>
-                                    </Button>
+									</Button>
 									<Button Background="Transparent"
 											Command="{Binding AiCommand}"
 											Margin="0,15,0,0">
@@ -237,5 +238,5 @@
 				</DockPanel>
 			</Border>
 		</Grid>
-	</diaglogHost:DialogHost>
+	</dialogHost:DialogHost>
 </Window>

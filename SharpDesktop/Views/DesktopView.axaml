@@ -3,61 +3,73 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
              xmlns:rxui="http://reactiveui.net"
              xmlns:view="using:SharpDesktop.Views"
+             xmlns:dialogs="using:SharpDesktop.Views.Dialog"
              xmlns:vm="using:SharpDesktop.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SharpDesktop.Views.DesktopView"
              x:DataType="vm:DesktopViewModel">
-	<Border>
-		<Grid ColumnDefinitions="*,Auto">
-			<!-- 展示区 -->
-			<DockPanel Grid.Column="0"
-                       Background="Gray">
+	<dialogHost:DialogHost
+        IsOpen="{Binding IsModifyDesktopOpen}"
+        DialogMargin="8"
+        DisableOpeningAnimation="True"
+        dialogHost:DialogHostStyle.CornerRadius="8"
+        Background="DimGray">
+		<dialogHost:DialogHost.DialogContent>
+            
+		</dialogHost:DialogHost.DialogContent>
+		<Border>
+			<Grid ColumnDefinitions="*,Auto">
+				<!-- 展示区 -->
+				<DockPanel Grid.Column="0"
+						   Background="Gray">
 
-			</DockPanel>
+				</DockPanel>
 
-			<!-- 选择器 -->
-			<DockPanel Grid.Column="1"
-                       Dock="Right"
-                       Width="80"
-                       Background="DimGray"
-                       LastChildFill="False">
-				<Grid RowDefinitions="*,Auto">
-					<ScrollViewer VerticalScrollBarVisibility="Hidden">
-						<ItemsControl ItemsSource="{Binding Desktops}">
-							<ItemsControl.ItemTemplate>
-								<DataTemplate>
-									<Button Command="{Binding }"
-										    Height="80"
-											Width="80"
-											Background="Transparent"
-											Margin="0,2,0,0">
-										<Button.CommandParameter>
+				<!-- 选择器 -->
+				<DockPanel Grid.Column="1"
+						   Dock="Right"
+						   Width="80"
+						   Background="DimGray"
+						   LastChildFill="False">
+					<Grid RowDefinitions="*,Auto">
+						<ScrollViewer VerticalScrollBarVisibility="Hidden">
+							<ItemsControl ItemsSource="{Binding Desktops}">
+								<ItemsControl.ItemTemplate>
+									<DataTemplate>
+										<Button Command="{Binding }"
+												Height="80"
+												Width="80"
+												Background="Transparent"
+												Margin="0,2,0,0">
+											<Button.CommandParameter>
 
-										</Button.CommandParameter>
-										<materialIcons:MaterialIcon
-											Height="40"
-											Width="40"
-											Kind="Package"/>
-									</Button>
-								</DataTemplate>
-							</ItemsControl.ItemTemplate>
-						</ItemsControl>
-					</ScrollViewer>
-					<DockPanel Grid.Row="1"
-                               Dock="Top">
-						<Button Background="Transparent"
-                                Command="{Binding AddDesktopCommand}"
-                                Margin="0,0,0,0">
-							<materialIcons:MaterialIcon
-                                Height="40"
-                                Width="40"
-                                Kind="Add"/>
-						</Button>
-					</DockPanel>
-				</Grid>
-			</DockPanel>
-		</Grid>
-	</Border>
+											</Button.CommandParameter>
+											<materialIcons:MaterialIcon
+												Height="40"
+												Width="40"
+												Kind="Package"/>
+										</Button>
+									</DataTemplate>
+								</ItemsControl.ItemTemplate>
+							</ItemsControl>
+						</ScrollViewer>
+						<DockPanel Grid.Row="1"
+								   Dock="Top">
+							<Button Background="Transparent"
+									Command="{Binding AddDesktopCommand}"
+									Margin="0,0,0,0">
+								<materialIcons:MaterialIcon
+									Height="40"
+									Width="40"
+									Kind="Add"/>
+							</Button>
+						</DockPanel>
+					</Grid>
+				</DockPanel>
+			</Grid>
+		</Border>
+	</dialogHost:DialogHost>
 </UserControl>
