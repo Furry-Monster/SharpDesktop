@@ -11,6 +11,8 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SharpDesktop.Views.DesktopView"
              x:DataType="vm:DesktopViewModel">
+
+
 	<dialogHost:DialogHost
         IsOpen="{Binding IsModifyDesktopOpen}"
         DialogMargin="8"
@@ -40,7 +42,8 @@
 							<ItemsControl ItemsSource="{Binding Desktops}">
 								<ItemsControl.ItemTemplate>
 									<DataTemplate>
-										<Button Command="{Binding }"
+										<Button Command="{Binding Source={StaticResource VmLocator},Path=DesktopViewModel.OpenDesktopCommand}"
+												x:CompileBindings="False"
                                                 Height="80"
                                                 Width="80"
                                                 Background="Transparent"
@@ -52,7 +55,7 @@
 											<Button.ContextMenu>
 												<ContextMenu>
 													<Button Content="编辑"
-                                                            Command="{Binding}">
+                                                            Command="{Binding }">
 													</Button>
 													<Button Content="删除"
                                                             Command="{Binding}">
