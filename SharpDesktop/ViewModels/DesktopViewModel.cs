@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reactive;
 using System.Windows.Input;
+using DialogHostAvalonia;
 using ReactiveUI;
 using SharpDesktop.Models;
 using SharpDesktop.Models.Entity;
+using SharpDesktop.Views.Dialog;
 
 namespace SharpDesktop.ViewModels;
 
@@ -13,7 +16,6 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
 
     public DesktopViewModel(IScreen hostScreen) : base(hostScreen)
     {
-
         HostScreen = hostScreen;
 
         Refresh();// 刷新桌面列表
@@ -31,17 +33,30 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
             Refresh();
         });
 
-        EditDesktopCommand = ReactiveCommand.Create(() =>
+        EditDesktopCommand = ReactiveCommand.Create<Desktop>(desktop =>
         {
             //TODO: 实现编辑桌面功能
         });
 
-        DeleteDesktopCommand = ReactiveCommand.Create(() =>
+        DeleteDesktopCommand = ReactiveCommand.Create<Desktop>(async desktop =>
         {
             //TODO: 实现删除桌面功能
+            await using var db = DatabaseContextFactory.CreateContext();
+
+            var dialog = new DeleteDialog();
+
+            var result = await DialogHost.Show(dialog);
+
+            if (Convert.ToBoolean(result))
+            {
+                db.Desktops.Remove(desktop);
+                db.SaveChanges();
+            }
+
+            Refresh();
         });
 
-        OpenDesktopCommand = ReactiveCommand.Create(() =>
+        OpenDesktopCommand = ReactiveCommand.Create<Desktop>(desktop =>
         {
             //TODO: 实现打开桌面功能
         });
@@ -54,10 +69,10 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
     public IScreen HostScreen { get; }
 
     // 工具栏命令
-    public ICommand AddDesktopCommand { get; }
-    public ICommand EditDesktopCommand { get; }
-    public ICommand DeleteDesktopCommand { get; }
-    public ICommand OpenDesktopCommand { get; }
+    public ReactiveCommand<Unit, Unit> AddDesktopCommand { get; }
+    public ReactiveCommand<Desktop, Unit> EditDesktopCommand { get; }
+    public ReactiveCommand<Desktop, Unit> DeleteDesktopCommand { get; }
+    public ReactiveCommand<Desktop, Unit> OpenDesktopCommand { get; }
 
 
     // 字段
@@ -67,14 +82,6 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
     {
         get => _desktops;
         set => this.RaiseAndSetIfChanged(ref _desktops, value);
-    }
-
-    private bool _isModifyDesktopOpen = false;
-
-    public bool IsModifyDesktopOpen
-    {
-        get => _isModifyDesktopOpen;
-        set => this.RaiseAndSetIfChanged(ref _isModifyDesktopOpen, value);
     }
 
     // 方法

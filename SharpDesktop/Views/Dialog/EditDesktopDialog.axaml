@@ -1,0 +1,49 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="750"
+             x:Class="SharpDesktop.Views.Dialog.EditDesktopDialog">
+	<Border Height="750"
+            Width="1200">
+        <Grid RowDefinitions="Auto,*">
+            <Border Grid.Row="0"
+                    Background="DimGray">
+                <DockPanel Height="60"
+                           LastChildFill="False">
+                    <DockPanel Dock="Left">
+                        <materialIcons:MaterialIcon Kind="Settings"
+                                                    Height="40"
+                                                    Width="40"/>
+                        <TextBlock Text="Settings" FontSize="48"/>
+                    </DockPanel>
+                    <DockPanel Dock="Right">
+                        <Button Command="{Binding RelativeSource=
+								{RelativeSource FindAncestor, 
+								AncestorType=dialogHostAvalonia:DialogHost}, 
+								Path=CloseDialogCommand}"
+                                Background="Transparent"
+                                Height="50"
+                                Width="50">
+                            <materialIcons:MaterialIcon Kind="CloseBold"
+                                                        Height="40"
+                                                        Width="40"/>
+                        </Button>
+                    </DockPanel>
+                </DockPanel>
+            </Border>
+
+            <Border Grid.Row="1"
+                    Background="Gray">
+                <DockPanel>
+                    <TextBlock HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Text="没做完，请尽快关闭，否则10秒后自动启动你的原神"
+                               FontSize="36"/>
+                </DockPanel>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

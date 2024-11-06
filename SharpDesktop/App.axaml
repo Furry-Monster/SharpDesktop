@@ -19,9 +19,4 @@
 		<StyleInclude Source="/Styles/MicrosoftIcons.axaml"/>
 	</Application.Styles>
 
-	<Application.Resources>
-		<ResourceDictionary>
-			<vm:ViewModelLocator x:Key="VmLocator"/>
-		</ResourceDictionary>
-	</Application.Resources>
 </Application>

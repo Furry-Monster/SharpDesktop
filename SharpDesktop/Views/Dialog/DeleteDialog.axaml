@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SharpDesktop.Views.Dialog.DeleteDialog">
+	<StackPanel Width="500" Margin="16">
+		<TextBlock x:Name="TxtTitle"
+                   Text="确认删除？"
+                   HorizontalAlignment="Left"
+                   FontWeight="Bold"/>
+		<ScrollViewer MaxHeight="300">
+			<TextBlock x:Name="TxtContent"
+                       Text="此操作将永久删除该文件，是否继续？"
+                       Margin="0 16 0 16"
+                       FontSize="16"
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Center">
+			</TextBlock>
+		</ScrollViewer>
+
+		<Grid ColumnDefinitions="*,*">
+			<Button Grid.Column="0"
+					Margin="5"
+                    Content="确定"
+					Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHostAvalonia:DialogHost}, Path=CloseDialogCommand}">
+				<Button.CommandParameter>
+					<system:Boolean>True</system:Boolean>
+				</Button.CommandParameter>
+			</Button>
+			<Button Grid.Column="1"
+                    Margin="5"
+                    Content="取消"
+                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHostAvalonia:DialogHost}, Path=CloseDialogCommand}">
+				<Button.CommandParameter>
+					<system:Boolean>False</system:Boolean>
+				</Button.CommandParameter>
+			</Button>
+		</Grid>
+	</StackPanel>
+</UserControl>

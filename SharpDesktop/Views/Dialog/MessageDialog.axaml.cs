@@ -12,13 +12,13 @@ public partial class MessageDialog : UserControl
     public MessageDialog(string content)
     {
         InitializeComponent();
-        txtContent.Text = content;
+        TxtContent.Text = content;
     }
 
     public MessageDialog(string title, string content)
     {
         InitializeComponent();
-        txtTitel.Text = title;
-        txtContent.Text = content;
+        TxtTitle.Text = title;
+        TxtContent.Text = content;
     }
 }

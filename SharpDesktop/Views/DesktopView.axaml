@@ -11,78 +11,69 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SharpDesktop.Views.DesktopView"
              x:DataType="vm:DesktopViewModel">
+	<Border>
+		<Grid ColumnDefinitions="*,Auto">
+			<!-- 展示区 -->
+			<DockPanel Grid.Column="0"
+					   Background="Gray">
 
+			</DockPanel>
 
-	<dialogHost:DialogHost
-        IsOpen="{Binding IsModifyDesktopOpen}"
-        DialogMargin="8"
-        DisableOpeningAnimation="True"
-        dialogHost:DialogHostStyle.CornerRadius="8"
-        Background="DimGray">
-		<dialogHost:DialogHost.DialogContent>
+			<!-- 选择器 -->
+			<DockPanel Grid.Column="1"
+					   Dock="Right"
+					   Width="80"
+					   Background="DimGray"
+					   LastChildFill="False">
+				<Grid RowDefinitions="*,Auto">
+					<!--桌面选项-->
+					<ScrollViewer VerticalScrollBarVisibility="Hidden">
+						<ItemsControl ItemsSource="{Binding Desktops}">
+							<ItemsControl.ItemTemplate>
+								<DataTemplate>
+									<Button Command="{Binding $parent[UserControl].DataContext.OpenDesktopCommand}"
+											CommandParameter="{Binding}"
+                                            x:CompileBindings="False"
+											Height="80"
+											Width="80"
+											Background="Transparent"
+											Margin="0,2,0,0">
+										<materialIcons:MaterialIcon
+											Height="40"
+											Width="40"
+											Kind="Package"/>
+										<Button.ContextMenu>
+											<ContextMenu>
+												<MenuItem Header="编辑"
+														  Command="{Binding $parent[UserControl].DataContext.EditDesktopCommand}"
+														  CommandParameter="{Binding}"
+                                                          x:CompileBindings="False"/>
+												<MenuItem Header="删除"
+														  Command="{Binding $parent[UserControl].DataContext.DeleteDesktopCommand}"
+														  CommandParameter="{Binding}"
+                                                          x:CompileBindings="False"/>
+											</ContextMenu>
+										</Button.ContextMenu>
+									</Button>
+								</DataTemplate>
+							</ItemsControl.ItemTemplate>
+						</ItemsControl>
+					</ScrollViewer>
 
-		</dialogHost:DialogHost.DialogContent>
-		<Border>
-			<Grid ColumnDefinitions="*,Auto">
-				<!-- 展示区 -->
-				<DockPanel Grid.Column="0"
-						   Background="Gray">
-
-				</DockPanel>
-
-				<!-- 选择器 -->
-				<DockPanel Grid.Column="1"
-						   Dock="Right"
-						   Width="80"
-						   Background="DimGray"
-						   LastChildFill="False">
-					<Grid RowDefinitions="*,Auto">
-						<!--桌面选项-->
-						<ScrollViewer VerticalScrollBarVisibility="Hidden">
-							<ItemsControl ItemsSource="{Binding Desktops}">
-								<ItemsControl.ItemTemplate>
-									<DataTemplate>
-										<Button Command="{Binding Source={StaticResource VmLocator},Path=DesktopViewModel.OpenDesktopCommand}"
-												x:CompileBindings="False"
-                                                Height="80"
-                                                Width="80"
-                                                Background="Transparent"
-                                                Margin="0,2,0,0">
-											<materialIcons:MaterialIcon
-												Height="40"
-												Width="40"
-												Kind="Package"/>
-											<Button.ContextMenu>
-												<ContextMenu>
-													<Button Content="编辑"
-                                                            Command="{Binding }">
-													</Button>
-													<Button Content="删除"
-                                                            Command="{Binding}">
-													</Button>
-												</ContextMenu>
-											</Button.ContextMenu>
-										</Button>
-									</DataTemplate>
-								</ItemsControl.ItemTemplate>
-							</ItemsControl>
-						</ScrollViewer>
-
-						<!--快速新建-->
-						<DockPanel Grid.Row="1"
-								   Dock="Top">
-							<Button Background="Transparent"
-									Command="{Binding AddDesktopCommand}"
-									Margin="0,0,0,0">
-								<materialIcons:MaterialIcon
-									Height="40"
-									Width="40"
-									Kind="Add"/>
-							</Button>
-						</DockPanel>
-					</Grid>
-				</DockPanel>
-			</Grid>
-		</Border>
-	</dialogHost:DialogHost>
+					<!--快速新建-->
+					<DockPanel Grid.Row="1"
+							   Dock="Top">
+						<Button Background="Transparent"
+								Command="{Binding AddDesktopCommand}"
+								Margin="0,0,0,0">
+							<materialIcons:MaterialIcon
+								Height="40"
+								Width="40"
+								Kind="Add"/>
+						</Button>
+					</DockPanel>
+				</Grid>
+			</DockPanel>
+		</Grid>
+	</Border>
 </UserControl>

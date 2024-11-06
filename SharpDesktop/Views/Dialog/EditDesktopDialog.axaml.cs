@@ -1,9 +1,10 @@
 using Avalonia.Controls;
+
 namespace SharpDesktop.Views.Dialog;
 
-public partial class ModifyDesktopView : UserControl
+public partial class EditDesktopDialog : UserControl
 {
-    public ModifyDesktopView()
+    public EditDesktopDialog()
     {
         InitializeComponent();
     }

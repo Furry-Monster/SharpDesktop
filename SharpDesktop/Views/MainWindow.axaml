@@ -22,7 +22,7 @@
         WindowState="Maximized">
 
 	<dialogHost:DialogHost
-        IsOpen="{Binding IsSettingOpen}"
+		Identifier="MainWindow"
         DialogMargin="8"
         DisableOpeningAnimation="True"
         dialogHost:DialogHostStyle.CornerRadius="8"

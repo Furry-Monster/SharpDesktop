@@ -6,6 +6,8 @@ using System.Diagnostics;
 using System.Reactive;
 using System.Runtime.Serialization;
 using System.Windows.Input;
+using DialogHostAvalonia;
+using SharpDesktop.Views.Dialog;
 
 namespace SharpDesktop.ViewModels
 {
@@ -90,8 +92,9 @@ namespace SharpDesktop.ViewModels
 
             ConfigCommand = ReactiveCommand.Create(() =>
             {
-                // TODO:打开配置窗口
-                IsSettingOpen = true;
+                var dialog = new SettingView();
+
+                DialogHost.Show(dialog);
             });
             #endregion
 
@@ -144,22 +147,13 @@ namespace SharpDesktop.ViewModels
         public ReactiveCommand<Unit, IRoutableViewModel> ToolboxCommand { get; private set; }
         public ReactiveCommand<Unit, IRoutableViewModel> AiCommand { get; private set; }
 
-
+        // 字段和属性
         private string _path = "None";
 
         public string Path
         {
             get => _path;
             set => this.RaiseAndSetIfChanged(ref _path, value);
-        }
-
-        private bool _isSettingOpen = false;
-
-        [DataMember]
-        public bool IsSettingOpen
-        {
-            get => _isSettingOpen;
-            set => this.RaiseAndSetIfChanged(ref _isSettingOpen, value);
         }
     }
 }

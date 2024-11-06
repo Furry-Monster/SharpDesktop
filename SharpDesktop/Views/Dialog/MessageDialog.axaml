@@ -6,12 +6,12 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SharpDesktop.Views.Dialog.MessageDialog">
 	<StackPanel Width="300" Margin="16">
-		<TextBlock x:Name="txtTitel"
+		<TextBlock x:Name="TxtTitle"
                    Text="提示"
                    HorizontalAlignment="Left"
                    FontWeight="Bold"/>
 		<ScrollViewer MaxHeight="300">
-			<TextBlock x:Name="txtContent"
+			<TextBlock x:Name="TxtContent"
                        Margin="0 16 0 16"
                        FontSize="16"
                        TextWrapping="Wrap"
@@ -20,8 +20,7 @@
 		</ScrollViewer>
 
 
-		<Button x:Name="BtnOk"
-                Content="确定"
+		<Button Content="确定"
                 Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHostAvalonia:DialogHost}, Path=CloseDialogCommand}"/>
 	</StackPanel>
 </UserControl>
