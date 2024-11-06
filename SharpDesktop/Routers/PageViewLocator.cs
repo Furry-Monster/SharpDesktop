@@ -3,10 +3,12 @@ using ReactiveUI;
 using SharpDesktop.ViewModels;
 using SharpDesktop.Views;
 
-namespace SharpDesktop;
+namespace SharpDesktop.Routers;
 
-internal class ReactiveViewLocator : IViewLocator
+internal class PageViewLocator : IViewLocator
 {
+
+    // 视图定位
     public IViewFor ResolveView<T>(T? viewModel, string? contract = null) => viewModel switch
     {
         DesktopViewModel context => new DesktopView { DataContext = context },
@@ -18,4 +20,6 @@ internal class ReactiveViewLocator : IViewLocator
 
         _ => throw new ArgumentOutOfRangeException(nameof(viewModel), viewModel, null)
     };
+
+    
 }

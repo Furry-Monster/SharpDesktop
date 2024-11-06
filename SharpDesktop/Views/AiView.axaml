@@ -2,10 +2,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SharpDesktop.Views.AiView">
-  <TextBlock HorizontalAlignment="Center"
-             VerticalAlignment="Center"
-             Text="正在开发中，功能近期上线"
-             FontSize="36"/>
+	<Border>
+		<Grid ColumnDefinitions="Auto,*,Auto">
+			<!--对话历史-->
+			<Border Grid.Column="0">
+				<Grid Width="350"
+                      Background="Gray">
+
+				</Grid>
+			</Border>
+
+			<!--对话页面-->
+			<Border Grid.Column="1">
+				<Grid Background="Black">
+					<TextBlock HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Text="正在开发中，功能近期上线"
+							   FontSize="36"/>
+				</Grid>
+			</Border>
+
+			<!--Api切换-->
+			<Border Grid.Column="2">
+				<Grid Width="80"
+                      Background="DimGray">
+					<DockPanel LastChildFill="False">
+                        
+					</DockPanel>
+				</Grid>
+			</Border>
+		</Grid>
+	</Border>
 </UserControl>

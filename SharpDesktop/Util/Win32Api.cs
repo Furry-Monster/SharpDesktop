@@ -11,6 +11,9 @@ using System;
 
 namespace SharpDesktop.Util;
 
+/// <summary>
+///  win32Api静态类
+/// </summary>
 public static class Win32Api
 {
     #region Consts

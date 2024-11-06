@@ -8,6 +8,7 @@
         xmlns:app="clr-namespace:SharpDesktop"
         xmlns:views="using:SharpDesktop.Views"
         xmlns:dialogs="using:SharpDesktop.Views.Dialog"
+        xmlns:routers="using:SharpDesktop.Routers"
         xmlns:vm="using:SharpDesktop.ViewModels"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="SharpDesktop.Views.MainWindow"
@@ -187,7 +188,7 @@
 							</StackPanel>
 						</reactiveui:RoutedViewHost.DefaultContent>
 						<reactiveui:RoutedViewHost.ViewLocator>
-							<app:ReactiveViewLocator/>
+							<routers:PageViewLocator/>
 						</reactiveui:RoutedViewHost.ViewLocator>
 					</reactiveui:RoutedViewHost>
 				</Grid>

@@ -1,21 +1,27 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="SharpDesktop.App"
-             xmlns:local="using:SharpDesktop"
              xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
              xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
-             RequestedThemeVariant="Default">
+             xmlns:routers="clr-namespace:SharpDesktop.Routers"
+             xmlns:vm="clr-namespace:SharpDesktop.ViewModels"
+			 RequestedThemeVariant="Default">
 
 	<Application.DataTemplates>
-		<local:ViewLocator/>
+		<routers:ViewLocator/>
 	</Application.DataTemplates>
 
 	<Application.Styles>
-		<themes:MaterialTheme BaseTheme="Dark" PrimaryColor="Indigo" SecondaryColor="Lime"/>
+		<themes:MaterialTheme BaseTheme="Dark" PrimaryColor="Brown" SecondaryColor="Lime"/>
 		<materialIcons:MaterialIconStyles/>
 		<dialogHost:DialogHostStyles/>
 		<StyleInclude Source="/Styles/MicrosoftIcons.axaml"/>
 	</Application.Styles>
 
+	<Application.Resources>
+		<ResourceDictionary>
+			<vm:ViewModelLocator x:Key="VmLocator"/>
+		</ResourceDictionary>
+	</Application.Resources>
 </Application>

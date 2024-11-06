@@ -1,12 +1,10 @@
 using Avalonia.Controls;
-
 namespace SharpDesktop.Views.Dialog;
 
-public partial class SettingView : UserControl
+public partial class ModifyDesktopView : UserControl
 {
-    public SettingView()
+    public ModifyDesktopView()
     {
         InitializeComponent();
-
     }
 }

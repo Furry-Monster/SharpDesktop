@@ -5,9 +5,9 @@
              xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
              mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="750"
-             x:Class="SharpDesktop.Views.Dialog.SettingView">
-	<Border Height="750"
-            Width="1200">
+             x:Class="SharpDesktop.Views.Dialog.ModifyDesktopView">
+	<Border Width="1200"
+            Height="750">
 		<Grid RowDefinitions="Auto,*">
 			<Border Grid.Row="0"
                     Background="DimGray">
@@ -20,10 +20,7 @@
 						<TextBlock Text="Settings" FontSize="48"/>
 					</DockPanel>
 					<DockPanel Dock="Right">
-						<Button Command="{Binding RelativeSource=
-								{RelativeSource FindAncestor, 
-								AncestorType=dialogHostAvalonia:DialogHost}, 
-								Path=CloseDialogCommand}"
+						<Button Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHostAvalonia:DialogHost}, Path=CloseDialogCommand}"
                                 Background="Transparent"
                                 Height="50"
                                 Width="50">
@@ -37,12 +34,7 @@
 
 			<Border Grid.Row="1"
                     Background="Gray">
-				<DockPanel>
-					<TextBlock HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               Text="没做完，请尽快关闭，否则10秒后自动启动你的原神"
-                               FontSize="36"/>
-				</DockPanel>
+
 			</Border>
 		</Grid>
 	</Border>

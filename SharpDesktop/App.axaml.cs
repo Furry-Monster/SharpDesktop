@@ -35,6 +35,9 @@ namespace SharpDesktop
             // 加载保存的视图模型状态
             var state = RxApp.SuspensionHost.GetAppState<MainWindowViewModel>();
 
+            // 注册ViewModelLocator
+            ViewModelLocator.Instance.Init(state);
+
             // 加载主窗口
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
@@ -53,6 +56,7 @@ namespace SharpDesktop
 
         private void OnDesktopOnStartup(object? sender, ControlledApplicationLifetimeStartupEventArgs args)
         {
+            // 创建数据库
             using var dbContext = DatabaseContextFactory.CreateContext();
             dbContext.Database.EnsureCreated();
         }

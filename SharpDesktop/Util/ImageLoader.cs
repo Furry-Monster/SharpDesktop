@@ -8,13 +8,26 @@ using Avalonia.Platform;
 
 namespace SharpDesktop.Util;
 
+/// <summary>
+/// A class for loading images from file paths or web URLs.
+/// </summary>
 public static class ImageLoader
 {
+    /// <summary>
+    /// Loads an image from a file path.
+    /// </summary>
+    /// <param name="resourceUri"> The file path of the image. </param>
+    /// <returns> The loaded image. </returns>
     public static Bitmap LoadFromResource(Uri resourceUri)
     {
         return new Bitmap(AssetLoader.Open(resourceUri));
     }
 
+    /// <summary>
+    /// Loads an image from a web URL.
+    /// </summary>
+    /// <param name="url"> The URL of the image. </param>
+    /// <returns> The loaded image. </returns>
     public static async Task<Bitmap?> LoadFromWeb(Uri url)
     {
         using var httpClient = new HttpClient();

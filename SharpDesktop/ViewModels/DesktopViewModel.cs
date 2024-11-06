@@ -11,8 +11,10 @@ namespace SharpDesktop.ViewModels;
 
 public class DesktopViewModel : ViewModelBase, IRoutableViewModel
 {
-    public DesktopViewModel(IScreen hostScreen)
+
+    public DesktopViewModel(IScreen hostScreen) : base(hostScreen)
     {
+
         HostScreen = hostScreen;
 
         Refresh();// 刷新桌面列表
@@ -30,6 +32,16 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
             Refresh();
         });
 
+        EditDesktopCommand = ReactiveCommand.Create(() =>
+        {
+            //TODO: 实现编辑桌面功能
+        });
+
+        DeleteDesktopCommand = ReactiveCommand.Create(() =>
+        {
+            //TODO: 实现删除桌面功能
+        });
+
         OpenDesktopCommand = ReactiveCommand.Create(() =>
         {
             //TODO: 实现打开桌面功能
@@ -44,6 +56,8 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
 
     // 工具栏命令
     public ICommand AddDesktopCommand { get; }
+    public ICommand EditDesktopCommand { get; }
+    public ICommand DeleteDesktopCommand { get; }
     public ICommand OpenDesktopCommand { get; }
 
 

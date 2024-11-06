@@ -8,7 +8,7 @@ namespace SharpDesktop.ViewModels;
 
 public class ResourceViewModel : ViewModelBase, IRoutableViewModel
 {
-    public ResourceViewModel(IScreen hostScreen)
+    public ResourceViewModel(IScreen hostScreen) : base(hostScreen)
     {
         HostScreen = hostScreen;
 

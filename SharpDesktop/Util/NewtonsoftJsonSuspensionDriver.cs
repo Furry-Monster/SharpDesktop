@@ -7,9 +7,13 @@ using ReactiveUI;
 
 namespace SharpDesktop.Util;
 
+/// <summary>
+/// NewtonsoftJson.NET实现的状态保存驱动
+/// </summary>
+/// <param name="file"> 状态文件路径 </param>
 public class NewtonsoftJsonSuspensionDriver(string file) : ISuspensionDriver
 {
-    
+
     private readonly string _file = file;
 
     private readonly JsonSerializerSettings _settings = new JsonSerializerSettings

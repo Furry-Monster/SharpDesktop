@@ -12,18 +12,12 @@ namespace SharpDesktop.ViewModels
     [DataContract]
     public class MainWindowViewModel : ViewModelBase, IScreen
     {
-        // 单例模式
-        private static MainWindowViewModel? _instance;
-
-        public static MainWindowViewModel Instance => _instance ??= new MainWindowViewModel();
 
         // 页面路由
         public RoutingState Router { get; } = new RoutingState();
 
         public MainWindowViewModel()
         {
-            // 注册单例
-            _instance = this;
 
             // --------------------
             // 窗口命令实现
@@ -106,27 +100,27 @@ namespace SharpDesktop.ViewModels
             // --------------------
             #region 页面命令实现
             DesktopCommand = ReactiveCommand.CreateFromObservable(() =>
-                Router.Navigate.Execute(new DesktopViewModel(this))
+                Router.Navigate.Execute(ViewModelLocator.Instance.DesktopViewModel)
             );
 
             ResourceCommand = ReactiveCommand.CreateFromObservable(() =>
-                Router.Navigate.Execute(new ResourceViewModel(this))
+                Router.Navigate.Execute(ViewModelLocator.Instance.ResourceViewModel)
             );
 
             WorkspaceCommand = ReactiveCommand.CreateFromObservable(() =>
-                Router.Navigate.Execute(new WorkspaceViewModel(this))
+                Router.Navigate.Execute(ViewModelLocator.Instance.WorkspaceViewModel)
             );
 
             TerminalCommand = ReactiveCommand.CreateFromObservable(() =>
-                Router.Navigate.Execute(new TerminalViewModel(this))
+                Router.Navigate.Execute(ViewModelLocator.Instance.TerminalViewModel)
             );
 
             ToolboxCommand = ReactiveCommand.CreateFromObservable(() =>
-                Router.Navigate.Execute(new ToolboxViewModel(this))
+                Router.Navigate.Execute(ViewModelLocator.Instance.ToolboxViewModel)
             );
 
             AiCommand = ReactiveCommand.CreateFromObservable(() =>
-                Router.Navigate.Execute(new AiViewModel(this))
+                Router.Navigate.Execute(ViewModelLocator.Instance.AiViewModel)
             );
             #endregion
         }

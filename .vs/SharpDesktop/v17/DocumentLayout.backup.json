@@ -3,30 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\views\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\views\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\viewmodels\\viewmodellocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\viewmodels\\viewmodellocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\views\\dialog\\settingview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\views\\dialog\\settingview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\views\\resourceview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\views\\resourceview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\viewmodels\\desktopviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\viewmodels\\desktopviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\views\\dialog\\settingview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\views\\dialog\\settingview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\views\\desktopview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\views\\desktopview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "DockedHeight": 273,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,10 +50,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
@@ -61,58 +57,74 @@
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Views\\MainWindow.axaml",
-              "RelativeDocumentMoniker": "SharpDesktop\\Views\\MainWindow.axaml",
-              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Views\\MainWindow.axaml",
-              "RelativeToolTip": "SharpDesktop\\Views\\MainWindow.axaml",
+              "DocumentIndex": 3,
+              "Title": "DesktopView.axaml",
+              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Views\\DesktopView.axaml",
+              "RelativeDocumentMoniker": "SharpDesktop\\Views\\DesktopView.axaml",
+              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Views\\DesktopView.axaml",
+              "RelativeToolTip": "SharpDesktop\\Views\\DesktopView.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-04T02:04:11.989Z",
+              "WhenOpened": "2024-11-05T11:54:42.192Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ResourceView.axaml",
-              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Views\\ResourceView.axaml",
-              "RelativeDocumentMoniker": "SharpDesktop\\Views\\ResourceView.axaml",
-              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Views\\ResourceView.axaml",
-              "RelativeToolTip": "SharpDesktop\\Views\\ResourceView.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-04T02:03:39.915Z",
+              "DocumentIndex": 0,
+              "Title": "ViewModelLocator.cs",
+              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\ViewModels\\ViewModelLocator.cs",
+              "RelativeDocumentMoniker": "SharpDesktop\\ViewModels\\ViewModelLocator.cs",
+              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\ViewModels\\ViewModelLocator.cs",
+              "RelativeToolTip": "SharpDesktop\\ViewModels\\ViewModelLocator.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAACgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T11:46:25.675Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SettingView.axaml",
-              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Views\\Dialog\\SettingView.axaml",
-              "RelativeDocumentMoniker": "SharpDesktop\\Views\\Dialog\\SettingView.axaml",
-              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Views\\Dialog\\SettingView.axaml",
-              "RelativeToolTip": "SharpDesktop\\Views\\Dialog\\SettingView.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-04T02:00:40.507Z",
+              "Title": "MainWindowViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeDocumentMoniker": "SharpDesktop\\ViewModels\\MainWindowViewModel.cs",
+              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeToolTip": "SharpDesktop\\ViewModels\\MainWindowViewModel.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAIAywGYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T11:41:54.804Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SettingView.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Views\\Dialog\\SettingView.axaml.cs",
-              "RelativeDocumentMoniker": "SharpDesktop\\Views\\Dialog\\SettingView.axaml.cs",
-              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Views\\Dialog\\SettingView.axaml.cs",
-              "RelativeToolTip": "SharpDesktop\\Views\\Dialog\\SettingView.axaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "DesktopViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\ViewModels\\DesktopViewModel.cs",
+              "RelativeDocumentMoniker": "SharpDesktop\\ViewModels\\DesktopViewModel.cs",
+              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\ViewModels\\DesktopViewModel.cs",
+              "RelativeToolTip": "SharpDesktop\\ViewModels\\DesktopViewModel.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T02:00:39.859Z",
+              "WhenOpened": "2024-11-05T11:39:17.197Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 217,
+          "DockedHeight": 127,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 200,
           "SelectedChildIndex": -1,
           "Children": [
             {

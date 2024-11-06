@@ -9,9 +9,11 @@ namespace SharpDesktop.ViewModels;
 
 public class TerminalViewModel : ViewModelBase, IRoutableViewModel
 {
-    public TerminalViewModel(IScreen screen)
+
+
+    public TerminalViewModel(IScreen hostScreen) : base(hostScreen)
     {
-        HostScreen = screen;
+        HostScreen = hostScreen;
 
         QuickCommandList =
         [

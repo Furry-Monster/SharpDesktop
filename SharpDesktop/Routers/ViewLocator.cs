@@ -3,7 +3,7 @@ using Avalonia.Controls.Templates;
 using SharpDesktop.ViewModels;
 using System;
 
-namespace SharpDesktop
+namespace SharpDesktop.Routers
 {
     public class ViewLocator : IDataTemplate
     {
