@@ -8,7 +8,7 @@ namespace SharpDesktop.Models;
 /// </summary>
 public class DatabaseContext : DbContext
 {
-    
+
     // ReSharper disable once ConvertToPrimaryConstructor
     public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
     {
@@ -24,8 +24,10 @@ public class DatabaseContext : DbContext
             entity.Property(e => e.Id)
                 .ValueGeneratedOnAdd();
             entity.Property(e => e.Name)
-                .IsRequired();
-            entity.Property(e => e.IconPath);
+                .IsRequired()
+                .HasMaxLength(20);
+            entity.Property(e => e.IconPath)
+                .HasMaxLength(100);
             entity.Property(e => e.Directory)
                 .HasMaxLength(100);
             entity.HasKey(e => e.Id);
