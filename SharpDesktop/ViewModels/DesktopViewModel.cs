@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.IO;
 using System.Linq;
 using System.Reactive;
 using System.Windows.Input;
-using Avalonia.Controls;
 using DialogHostAvalonia;
 using ReactiveUI;
 using SharpDesktop.Models;
 using SharpDesktop.Models.Entity;
-using SharpDesktop.Util;
 using SharpDesktop.Views.Dialog;
 
 namespace SharpDesktop.ViewModels;
@@ -36,43 +33,15 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
             Refresh();
         });
 
-        EditDesktopCommand = ReactiveCommand.Create<Desktop>(async desktop =>
+        EditDesktopCommand = ReactiveCommand.Create<Desktop>(desktop =>
         {
             //TODO: 实现编辑桌面功能
-            using var db = DatabaseContextFactory.CreateContext();
-
-            var dialog = new EditDesktopDialog()
-            {
-                DataContext = desktop
-            };
-
-            var result = await DialogHost.Show(dialog);
-
-            if (Convert.ToBoolean(result))
-            {
-                // 数据验证
-                //if (!File.Exists(dialog.IconPath.Text) || PathHelper.GetSuffix(dialog.IconPath.Text).ToLower() != "ico")
-                //{
-                //    var messageDialog = new MessageDialog("文件不存在或不支持");
-                //    await DialogHost.Show(messageDialog);
-                //    return;
-                //}
-
-                // 数据克隆
-                desktop.Name = dialog.DesktopName.Text!;
-                desktop.IconPath = dialog.IconPath.Text;
-
-                // 数据保存
-                db.Desktops.Update(desktop);
-                db.SaveChanges();
-
-                Refresh();
-            }
         });
 
         DeleteDesktopCommand = ReactiveCommand.Create<Desktop>(async desktop =>
         {
-            using var db = DatabaseContextFactory.CreateContext();
+            //TODO: 实现删除桌面功能
+            await using var db = DatabaseContextFactory.CreateContext();
 
             var dialog = new DeleteDialog();
 
@@ -93,7 +62,6 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
         });
 
         #endregion
-
     }
 
     // 路由接口实现
@@ -105,6 +73,7 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
     public ReactiveCommand<Desktop, Unit> EditDesktopCommand { get; }
     public ReactiveCommand<Desktop, Unit> DeleteDesktopCommand { get; }
     public ReactiveCommand<Desktop, Unit> OpenDesktopCommand { get; }
+
 
     // 字段
     private ObservableCollection<Desktop>? _desktops = [];

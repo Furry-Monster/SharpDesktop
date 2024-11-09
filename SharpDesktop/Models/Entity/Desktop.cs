@@ -1,5 +1,4 @@
 ﻿using System;
-using ReactiveUI;
 
 namespace SharpDesktop.Models.Entity;
 
@@ -12,5 +11,4 @@ public class Desktop(string name, string? iconPath = null, string? directory = n
     public string? IconPath { get; set; } = iconPath;
 
     public string? Directory { get; set; } = directory;
-
 }

@@ -12,7 +12,6 @@
 		<routers:ViewLocator/>
 	</Application.DataTemplates>
 
-
 	<Application.Styles>
 		<themes:MaterialTheme BaseTheme="Dark" PrimaryColor="Brown" SecondaryColor="Lime"/>
 		<materialIcons:MaterialIconStyles/>
