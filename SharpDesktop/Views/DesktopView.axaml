@@ -14,10 +14,41 @@
 	<Border>
 		<Grid ColumnDefinitions="*,Auto">
 			<!-- 展示区 -->
-			<DockPanel Grid.Column="0"
-					   Background="Gray">
-
-			</DockPanel>
+			<Border Grid.Column="0"
+                    Background="Gray">
+				<WrapPanel>
+					<ItemsControl ItemsSource="{Binding CurrentDesktop.Launchers}">
+						<ItemsControl.ItemTemplate>
+							<DataTemplate>
+								<Button Margin="20,20,0,0"
+										Height="240" Width="120"
+                                        Command="{Binding $parent[UserControl].DataContext.OpenLauncherCommand}"
+                                        CommandParameter="{Binding}"
+                                        x:CompileBindings="False">
+									<Button.ContextMenu>
+										<ContextMenu>
+											<MenuItem Header="编辑"
+                                                      Command="{Binding $parent[UserControl].DataContext.EditLauncherCommand}"
+                                                      CommandParameter="{Binding}"
+                                                      x:CompileBindings="False"/>
+											<MenuItem Header="删除"
+                                                      Command="{Binding $parent[UserControl].DataContext.DeleteLauncherCommand}"
+                                                      CommandParameter="{Binding}"
+                                                      x:CompileBindings="False"/>
+										</ContextMenu>
+									</Button.ContextMenu>
+								</Button>
+							</DataTemplate>
+						</ItemsControl.ItemTemplate>
+					</ItemsControl>
+					<Button Background="Transparent"
+							Command="{Binding AddLauncherCommand}"
+							Margin="20,20,0,0">
+						<materialIcons:MaterialIcon
+							Height="240" Width="120" Kind="Add"/>
+					</Button>
+				</WrapPanel>
+			</Border>
 
 			<!-- 选择器 -->
 			<DockPanel Grid.Column="1"
@@ -31,7 +62,7 @@
 						<ItemsControl ItemsSource="{Binding Desktops}">
 							<ItemsControl.ItemTemplate>
 								<DataTemplate>
-									<Button Command="{Binding $parent[UserControl].DataContext.OpenDesktopCommand}"
+									<Button Command="{Binding $parent[UserControl].DataContext.SelectDesktopCommand}"
 											CommandParameter="{Binding}"
                                             x:CompileBindings="False"
 											Height="80"

@@ -49,7 +49,8 @@
 										 Classes="outline"
 										 Theme="{StaticResource OutlineTextBox}"
 										 HorizontalAlignment="Stretch"
-										 Text=""/>
+										 Text="{Binding IconPath,Mode=OneWay}"
+                                         x:CompileBindings="False"/>
 
 								<!--TODO: 实现文件选择器选择路径-->
 								<Button Grid.Column="1"

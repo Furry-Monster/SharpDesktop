@@ -3,25 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\models\\entity\\desktop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\models\\entity\\desktop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\models\\databasecontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\models\\databasecontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\models\\databasecontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\models\\databasecontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\app.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\app.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> TryToSolutionDatabaseBug
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\viewmodels\\desktopviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\viewmodels\\desktopviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\views\\desktopview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\views\\desktopview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,11 +26,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 270,
-<<<<<<< HEAD
-          "SelectedChildIndex": 6,
-=======
-          "SelectedChildIndex": 9,
->>>>>>> TryToSolutionDatabaseBug
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,19 +45,6 @@
               "Name": "ST:1:0:{08a1bf1d-7967-4afc-8253-1790862ab8c9}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DatabaseContextFactory.cs",
-              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\DatabaseContextFactory.cs",
-              "RelativeDocumentMoniker": "SharpDesktop\\Models\\DatabaseContextFactory.cs",
-              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\DatabaseContextFactory.cs",
-              "RelativeToolTip": "SharpDesktop\\Models\\DatabaseContextFactory.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAAA4AAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T02:33:34.934Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
@@ -75,18 +53,8 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 0,
-              "Title": "Desktop.cs",
-              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\Entity\\Desktop.cs",
-              "RelativeDocumentMoniker": "SharpDesktop\\Models\\Entity\\Desktop.cs",
-              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\Entity\\Desktop.cs",
-              "RelativeToolTip": "SharpDesktop\\Models\\Entity\\Desktop.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T02:47:05.462Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
@@ -96,46 +64,47 @@
               "RelativeDocumentMoniker": "SharpDesktop\\Models\\DatabaseContext.cs",
               "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\DatabaseContext.cs",
               "RelativeToolTip": "SharpDesktop\\Models\\DatabaseContext.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAIwBsAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T02:46:34.706Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DatabaseContextFactory.cs",
-              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\DatabaseContextFactory.cs",
-              "RelativeDocumentMoniker": "SharpDesktop\\Models\\DatabaseContextFactory.cs",
-              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\DatabaseContextFactory.cs",
-              "RelativeToolTip": "SharpDesktop\\Models\\DatabaseContextFactory.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T02:46:30.592Z",
-=======
-              "DocumentIndex": 2,
-              "Title": "DatabaseContext.cs",
-              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\DatabaseContext.cs",
-              "RelativeDocumentMoniker": "SharpDesktop\\Models\\DatabaseContext.cs",
-              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\DatabaseContext.cs",
-              "RelativeToolTip": "SharpDesktop\\Models\\DatabaseContext.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAIwBYAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T02:21:07.848Z",
+              "WhenOpened": "2024-11-09T07:15:08.276Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Desktop.cs",
-              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\Entity\\Desktop.cs",
-              "RelativeDocumentMoniker": "SharpDesktop\\Models\\Entity\\Desktop.cs",
-              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\Entity\\Desktop.cs",
-              "RelativeToolTip": "SharpDesktop\\Models\\Entity\\Desktop.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAUwAUAAAA5AAAAAAAAAA==",
+              "Title": "App.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\App.axaml.cs",
+              "RelativeDocumentMoniker": "SharpDesktop\\App.axaml.cs",
+              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\App.axaml.cs",
+              "RelativeToolTip": "SharpDesktop\\App.axaml.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T02:20:14.44Z",
->>>>>>> TryToSolutionDatabaseBug
+              "WhenOpened": "2024-11-09T07:14:38.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DesktopViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\ViewModels\\DesktopViewModel.cs",
+              "RelativeDocumentMoniker": "SharpDesktop\\ViewModels\\DesktopViewModel.cs",
+              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\ViewModels\\DesktopViewModel.cs",
+              "RelativeToolTip": "SharpDesktop\\ViewModels\\DesktopViewModel.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAADwv3QAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T05:55:17.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DesktopView.axaml",
+              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Views\\DesktopView.axaml",
+              "RelativeDocumentMoniker": "SharpDesktop\\Views\\DesktopView.axaml",
+              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Views\\DesktopView.axaml",
+              "RelativeToolTip": "SharpDesktop\\Views\\DesktopView.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-09T05:53:03.863Z",
               "EditorCaption": ""
             }
           ]
@@ -147,13 +116,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-<<<<<<< HEAD
-=======
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
->>>>>>> TryToSolutionDatabaseBug
             }
           ]
         },

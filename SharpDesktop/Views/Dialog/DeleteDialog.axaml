@@ -6,7 +6,8 @@
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SharpDesktop.Views.Dialog.DeleteDialog">
-	<StackPanel Width="500" Margin="16">
+	<StackPanel Width="500"
+                Margin="16">
 		<TextBlock x:Name="TxtTitle"
                    Text="确认删除？"
                    HorizontalAlignment="Left"
@@ -24,6 +25,7 @@
 		<Grid ColumnDefinitions="*,*">
 			<Button Grid.Column="0"
 					Margin="5"
+					Background="Gray"
                     Content="确定"
 					Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHostAvalonia:DialogHost}, Path=CloseDialogCommand}">
 				<Button.CommandParameter>
@@ -32,6 +34,7 @@
 			</Button>
 			<Button Grid.Column="1"
                     Margin="5"
+					Background="Gray"
                     Content="取消"
                     Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHostAvalonia:DialogHost}, Path=CloseDialogCommand}">
 				<Button.CommandParameter>

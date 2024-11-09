@@ -35,8 +35,7 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
 
         EditDesktopCommand = ReactiveCommand.Create<Desktop>(async desktop =>
         {
-            //TODO: 实现编辑桌面功能
-            using var db = DatabaseContextFactory.CreateContext();
+            await using var db = DatabaseContextFactory.CreateContext();
 
             var dialog = new EditDesktopDialog()
             {
@@ -69,7 +68,6 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
 
         DeleteDesktopCommand = ReactiveCommand.Create<Desktop>(async desktop =>
         {
-            //TODO: 实现删除桌面功能
             await using var db = DatabaseContextFactory.CreateContext();
 
             var dialog = new DeleteDialog();
@@ -85,9 +83,43 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
             Refresh();
         });
 
-        OpenDesktopCommand = ReactiveCommand.Create<Desktop>(desktop =>
+        SelectDesktopCommand = ReactiveCommand.Create<Desktop>(desktop =>
         {
-            //TODO: 实现打开桌面功能
+            _currentDesktop = desktop;
+
+            Refresh();
+        });
+
+        #endregion
+
+        //---------------
+        // 启动器命令
+        //---------------
+        #region 启动器命令
+
+        OpenLauncherCommand = ReactiveCommand.Create<Launcher>(launcher =>
+        {
+
+        });
+
+        EditLauncherCommand = ReactiveCommand.Create<Launcher>(launcher =>
+        {
+
+        });
+
+        AddLauncherCommand = ReactiveCommand.Create(() =>
+        {
+            if (CurrentDesktop == null) return;
+
+            using var db = DatabaseContextFactory.CreateContext();
+            CurrentDesktop.Launchers.Add(new Launcher("新建启动器"));
+            db.Desktops.Update(CurrentDesktop);
+            db.SaveChanges();
+        });
+
+        DeleteLauncherCommand = ReactiveCommand.Create<Launcher>(launcher =>
+        {
+
         });
 
         #endregion
@@ -101,8 +133,13 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
     public ReactiveCommand<Unit, Unit> AddDesktopCommand { get; }
     public ReactiveCommand<Desktop, Unit> EditDesktopCommand { get; }
     public ReactiveCommand<Desktop, Unit> DeleteDesktopCommand { get; }
-    public ReactiveCommand<Desktop, Unit> OpenDesktopCommand { get; }
+    public ReactiveCommand<Desktop, Unit> SelectDesktopCommand { get; }
 
+    // 启动器命令
+    public ReactiveCommand<Launcher, Unit> OpenLauncherCommand { get; }
+    public ReactiveCommand<Launcher, Unit> EditLauncherCommand { get; }
+    public ReactiveCommand<Unit, Unit> AddLauncherCommand { get; }
+    public ReactiveCommand<Launcher, Unit> DeleteLauncherCommand { get; }
 
     // 字段
     private ObservableCollection<Desktop>? _desktops = [];
@@ -113,10 +150,20 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
         set => this.RaiseAndSetIfChanged(ref _desktops, value);
     }
 
+    private Desktop _currentDesktop;
+
+    public Desktop CurrentDesktop
+    {
+        get => _currentDesktop;
+        set => this.RaiseAndSetIfChanged(ref _currentDesktop, value);
+    }
+
     // 方法
     private void Refresh()
     {
         using var db = DatabaseContextFactory.CreateContext();
+
+        // 刷新桌面列表
         var desktops = db.Desktops.ToList();
         Desktops?.Clear();
         Desktops = new ObservableCollection<Desktop>(desktops);
