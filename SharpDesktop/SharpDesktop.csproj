@@ -10,8 +10,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CustomControl\" />
     <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaXaml Remove="CustomControl\**" />
+    <Compile Remove="CustomControl\**" />
+    <EmbeddedResource Remove="CustomControl\**" />
+    <None Remove="CustomControl\**" />
   </ItemGroup>
 
   <ItemGroup>

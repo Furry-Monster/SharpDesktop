@@ -28,8 +28,6 @@ public class DatabaseContext : DbContext
                 .HasMaxLength(20);
             entity.Property(e => e.IconPath)
                 .HasMaxLength(100);
-            entity.Property(e => e.Directory)
-                .HasMaxLength(100);
             entity.HasKey(e => e.Id);
         });
     }
