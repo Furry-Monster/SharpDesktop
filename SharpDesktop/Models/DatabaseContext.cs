@@ -26,8 +26,6 @@ public class DatabaseContext : DbContext
             entity.Property(e => e.Name)
                 .IsRequired();
             entity.Property(e => e.IconPath);
-            entity.Property(e => e.Directory)
-                .HasMaxLength(100);
             entity.HasKey(e => e.Id);
         });
     }

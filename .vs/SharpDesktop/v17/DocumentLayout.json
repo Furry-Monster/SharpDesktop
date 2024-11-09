@@ -7,8 +7,12 @@
       "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\models\\entity\\desktop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\models\\entity\\desktopitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\models\\entity\\desktopitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\models\\databasecontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\models\\databasecontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 270,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,15 +34,19 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{08a1bf1d-7967-4afc-8253-1790862ab8c9}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
@@ -48,35 +56,36 @@
               "RelativeDocumentMoniker": "SharpDesktop\\Models\\Entity\\Desktop.cs",
               "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\Entity\\Desktop.cs",
               "RelativeToolTip": "SharpDesktop\\Models\\Entity\\Desktop.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T01:35:01.294Z",
+              "WhenOpened": "2024-11-09T02:47:05.462Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DesktopItem.cs",
-              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\Entity\\DesktopItem.cs",
-              "RelativeDocumentMoniker": "SharpDesktop\\Models\\Entity\\DesktopItem.cs",
-              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\Entity\\DesktopItem.cs",
-              "RelativeToolTip": "SharpDesktop\\Models\\Entity\\DesktopItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "DatabaseContext.cs",
+              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\DatabaseContext.cs",
+              "RelativeDocumentMoniker": "SharpDesktop\\Models\\DatabaseContext.cs",
+              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\DatabaseContext.cs",
+              "RelativeToolTip": "SharpDesktop\\Models\\DatabaseContext.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAIwBsAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T01:34:59.687Z",
+              "WhenOpened": "2024-11-09T02:46:34.706Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DatabaseContextFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\DatabaseContextFactory.cs",
+              "RelativeDocumentMoniker": "SharpDesktop\\Models\\DatabaseContextFactory.cs",
+              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\DatabaseContextFactory.cs",
+              "RelativeToolTip": "SharpDesktop\\Models\\DatabaseContextFactory.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T02:46:30.592Z",
+              "EditorCaption": ""
             }
           ]
         },
@@ -84,6 +93,10 @@
           "DockedHeight": 130,
           "SelectedChildIndex": -1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
