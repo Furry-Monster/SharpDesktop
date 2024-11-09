@@ -24,8 +24,10 @@ public class DatabaseContext : DbContext
             entity.Property(e => e.Id)
                 .ValueGeneratedOnAdd();
             entity.Property(e => e.Name)
-                .IsRequired();
-            entity.Property(e => e.IconPath);
+                .IsRequired()
+                .HasMaxLength(20);
+            entity.Property(e => e.IconPath)
+                .HasMaxLength(100);
             entity.HasKey(e => e.Id);
         });
     }
