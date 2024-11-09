@@ -33,9 +33,38 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
             Refresh();
         });
 
-        EditDesktopCommand = ReactiveCommand.Create<Desktop>(desktop =>
+        EditDesktopCommand = ReactiveCommand.Create<Desktop>(async desktop =>
         {
             //TODO: 实现编辑桌面功能
+            using var db = DatabaseContextFactory.CreateContext();
+
+            var dialog = new EditDesktopDialog()
+            {
+                DataContext = desktop
+            };
+
+            var result = await DialogHost.Show(dialog);
+
+            if (Convert.ToBoolean(result))
+            {
+                // 数据验证
+                //if (!File.Exists(dialog.IconPath.Text) || PathHelper.GetSuffix(dialog.IconPath.Text).ToLower() != "ico")
+                //{
+                //    var messageDialog = new MessageDialog("文件不存在或不支持");
+                //    await DialogHost.Show(messageDialog);
+                //    return;
+                //}
+
+                // 数据克隆
+                desktop.Name = dialog.DesktopName.Text!;
+                desktop.IconPath = dialog.IconPath.Text;
+
+                // 数据保存
+                db.Desktops.Update(desktop);
+                db.SaveChanges();
+
+                Refresh();
+            }
         });
 
         DeleteDesktopCommand = ReactiveCommand.Create<Desktop>(async desktop =>

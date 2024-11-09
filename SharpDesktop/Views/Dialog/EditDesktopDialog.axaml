@@ -3,47 +3,102 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:vm="clr-namespace:SharpDesktop.ViewModels"
+             xmlns:assist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
              xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
              mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="750"
              x:Class="SharpDesktop.Views.Dialog.EditDesktopDialog">
-	<Border Height="750"
-            Width="1200">
-        <Grid RowDefinitions="Auto,*">
-            <Border Grid.Row="0"
+	<Border Height="450"
+            Width="300">
+		<Grid RowDefinitions="Auto,*">
+			<!--顶部 标题栏-->
+			<Border Grid.Row="0"
                     Background="DimGray">
-                <DockPanel Height="60"
+				<DockPanel Height="60"
                            LastChildFill="False">
-                    <DockPanel Dock="Left">
-                        <materialIcons:MaterialIcon Kind="Settings"
+					<DockPanel Dock="Left">
+						<materialIcons:MaterialIcon Kind="Edit"
                                                     Height="40"
                                                     Width="40"/>
-                        <TextBlock Text="Settings" FontSize="48"/>
-                    </DockPanel>
-                    <DockPanel Dock="Right">
-                        <Button Command="{Binding RelativeSource=
-								{RelativeSource FindAncestor, 
-								AncestorType=dialogHostAvalonia:DialogHost}, 
-								Path=CloseDialogCommand}"
-                                Background="Transparent"
-                                Height="50"
-                                Width="50">
-                            <materialIcons:MaterialIcon Kind="CloseBold"
-                                                        Height="40"
-                                                        Width="40"/>
-                        </Button>
-                    </DockPanel>
-                </DockPanel>
-            </Border>
+						<TextBlock Text="Edit" FontSize="48"/>
+					</DockPanel>
+				</DockPanel>
+			</Border>
 
-            <Border Grid.Row="1"
-                    Background="Gray">
-                <DockPanel>
-                    <TextBlock HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               Text="没做完，请尽快关闭，否则10秒后自动启动你的原神"
-                               FontSize="36"/>
-                </DockPanel>
-            </Border>
-        </Grid>
-    </Border>
+			<!--内容区域-->
+			<Border Grid.Row="1"
+                    Background="Gray"
+                    Padding="16">
+				<DockPanel LastChildFill="False">
+					<!--上半 编辑区域-->
+					<DockPanel Dock="Top">
+						<StackPanel>
+							<TextBox x:Name="DesktopName"
+									 UseFloatingWatermark="True"
+									 assist:TextFieldAssist.Label="Desktop Name"
+									 Classes="outline"
+									 Theme="{StaticResource OutlineTextBox}"
+									 HorizontalAlignment="Stretch"
+									 Text="{Binding Name, Mode=OneWay}"
+									 x:CompileBindings="False"/>
+							<Grid ColumnDefinitions="*,Auto">
+								<TextBox x:Name="IconPath"
+										 UseFloatingWatermark="True"
+										 assist:TextFieldAssist.Label="Icon Path"
+										 Classes="outline"
+										 Theme="{StaticResource OutlineTextBox}"
+										 HorizontalAlignment="Stretch"
+										 Text=""/>
+
+								<!--TODO: 实现文件选择器选择路径-->
+								<Button Grid.Column="1"
+										Background="Transparent"
+										Margin="5,7,0,0">
+									<materialIcons:MaterialIcon Kind="Folder"
+																Width="20"
+															    Height="20"/>
+								</Button>
+
+							</Grid>
+						</StackPanel>
+					</DockPanel>
+
+					<!--下半 按钮区域-->
+					<DockPanel Dock="Bottom">
+						<Grid ColumnDefinitions="*,*">
+							<Button Grid.Column="0"
+                                    Command="{Binding RelativeSource=
+								            {RelativeSource FindAncestor, 
+								            AncestorType=dialogHostAvalonia:DialogHost}, 
+								            Path=CloseDialogCommand}"
+                                    Margin="0,0,10,0"
+                                    Background="DimGray"
+                                    Height="50"
+                                    Content="保存"
+                                    FontSize="24">
+								<Button.CommandParameter>
+									<system:Boolean>True</system:Boolean>
+								</Button.CommandParameter>
+							</Button>
+							<Button Grid.Column="1"
+                                    Command="{Binding RelativeSource=
+								            {RelativeSource FindAncestor, 
+								            AncestorType=dialogHostAvalonia:DialogHost}, 
+								            Path=CloseDialogCommand}"
+                                    Margin="10,0,0,0"
+                                    Background="DimGray"
+                                    Height="50"
+                                    Content="取消"
+                                    FontSize="24">
+								<Button.CommandParameter>
+									<system:Boolean>False</system:Boolean>
+								</Button.CommandParameter>
+							</Button>
+						</Grid>
+					</DockPanel>
+				</DockPanel>
+			</Border>
+		</Grid>
+	</Border>
 </UserControl>
