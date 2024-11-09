@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reactive;
 using System.Windows.Input;
 using DialogHostAvalonia;
+using Microsoft.EntityFrameworkCore;
 using ReactiveUI;
 using SharpDesktop.Models;
 using SharpDesktop.Models.Entity;
@@ -85,7 +86,7 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
 
         SelectDesktopCommand = ReactiveCommand.Create<Desktop>(desktop =>
         {
-            _currentDesktop = desktop;
+            CurrentDesktop = desktop;
 
             Refresh();
         });
@@ -115,6 +116,8 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
             CurrentDesktop.Launchers.Add(new Launcher("新建启动器"));
             db.Desktops.Update(CurrentDesktop);
             db.SaveChanges();
+
+            Refresh();
         });
 
         DeleteLauncherCommand = ReactiveCommand.Create<Launcher>(launcher =>
@@ -141,6 +144,7 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
     public ReactiveCommand<Unit, Unit> AddLauncherCommand { get; }
     public ReactiveCommand<Launcher, Unit> DeleteLauncherCommand { get; }
 
+
     // 字段
     private ObservableCollection<Desktop>? _desktops = [];
 
@@ -150,16 +154,24 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
         set => this.RaiseAndSetIfChanged(ref _desktops, value);
     }
 
-    private Desktop _currentDesktop;
+    private Desktop? _currentDesktop;
 
-    public Desktop CurrentDesktop
+    public Desktop? CurrentDesktop
     {
         get => _currentDesktop;
         set => this.RaiseAndSetIfChanged(ref _currentDesktop, value);
     }
 
+    private ObservableCollection<Launcher>? _launchers = [];
+
+    public ObservableCollection<Launcher>? Launchers
+    {
+        get => _launchers;
+        set => this.RaiseAndSetIfChanged(ref _launchers, value);
+    }
+
     // 方法
-    private void Refresh()
+    public void Refresh()
     {
         using var db = DatabaseContextFactory.CreateContext();
 
@@ -167,5 +179,14 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
         var desktops = db.Desktops.ToList();
         Desktops?.Clear();
         Desktops = new ObservableCollection<Desktop>(desktops);
+
+        // 刷新启动器列表
+        var launchers = db.Desktops
+            .Include(e => e.Launchers)
+            .Where(e => CurrentDesktop != null && e.Id == CurrentDesktop.Id)
+            .SelectMany(e => e.Launchers)
+            .ToList();
+        Launchers?.Clear();
+        Launchers = new ObservableCollection<Launcher>(launchers);
     }
 }

@@ -13,5 +13,7 @@ public class Launcher(string name, string? path = null, string? backgroundPath =
 
     public string? BackgroundPath { get; set; } = backgroundPath;
 
-    public List<Desktop> Desktops { get; set; } = [];
+    public Guid DesktopId { get; set; }
+
+    public Desktop Desktop { get; set; } = null!;
 }

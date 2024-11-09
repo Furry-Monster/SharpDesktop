@@ -16,38 +16,57 @@
 			<!-- 展示区 -->
 			<Border Grid.Column="0"
                     Background="Gray">
-				<WrapPanel>
-					<ItemsControl ItemsSource="{Binding CurrentDesktop.Launchers}">
-						<ItemsControl.ItemTemplate>
-							<DataTemplate>
-								<Button Margin="20,20,0,0"
-										Height="240" Width="120"
-                                        Command="{Binding $parent[UserControl].DataContext.OpenLauncherCommand}"
-                                        CommandParameter="{Binding}"
-                                        x:CompileBindings="False">
-									<Button.ContextMenu>
-										<ContextMenu>
-											<MenuItem Header="编辑"
-                                                      Command="{Binding $parent[UserControl].DataContext.EditLauncherCommand}"
-                                                      CommandParameter="{Binding}"
-                                                      x:CompileBindings="False"/>
-											<MenuItem Header="删除"
-                                                      Command="{Binding $parent[UserControl].DataContext.DeleteLauncherCommand}"
-                                                      CommandParameter="{Binding}"
-                                                      x:CompileBindings="False"/>
-										</ContextMenu>
-									</Button.ContextMenu>
-								</Button>
-							</DataTemplate>
-						</ItemsControl.ItemTemplate>
-					</ItemsControl>
+				<Grid>
+					<ScrollViewer>
+						<ItemsControl ItemsSource="{Binding Launchers}">
+							<ItemsControl.ItemsPanel>
+								<ItemsPanelTemplate>
+									<WrapPanel/>
+								</ItemsPanelTemplate>
+							</ItemsControl.ItemsPanel>
+							<ItemsControl.ItemTemplate>
+								<DataTemplate>
+									<Button Margin="20,20,0,0"
+											Height="240" Width="140"
+											Command="{Binding $parent[UserControl].DataContext.OpenLauncherCommand}"
+											CommandParameter="{Binding}"
+											x:CompileBindings="False"
+											Background="Transparent">
+										<Button.ContextMenu>
+											<ContextMenu>
+												<MenuItem Header="编辑"
+														  Command="{Binding $parent[UserControl].DataContext.EditLauncherCommand}"
+														  CommandParameter="{Binding}"
+														  x:CompileBindings="False"/>
+												<MenuItem Header="删除"
+														  Command="{Binding $parent[UserControl].DataContext.DeleteLauncherCommand}"
+														  CommandParameter="{Binding}"
+														  x:CompileBindings="False"/>
+											</ContextMenu>
+										</Button.ContextMenu>
+									</Button>
+								</DataTemplate>
+							</ItemsControl.ItemTemplate>
+						</ItemsControl>
+						<ScrollViewer.ContextMenu>
+							<ContextMenu>
+								<MenuItem Header="新建"
+                                          Command="{Binding AddLauncherCommand}"/>
+								<MenuItem Header="刷新"
+                                          Command="{Binding Refresh}"/>
+							</ContextMenu>
+						</ScrollViewer.ContextMenu>
+					</ScrollViewer>
+					<!--
 					<Button Background="Transparent"
 							Command="{Binding AddLauncherCommand}"
-							Margin="20,20,0,0">
+							Margin="20,20,0,0"
+							Height="240" Width="140">
 						<materialIcons:MaterialIcon
 							Height="240" Width="120" Kind="Add"/>
 					</Button>
-				</WrapPanel>
+					-->
+				</Grid>
 			</Border>
 
 			<!-- 选择器 -->

@@ -11,5 +11,5 @@ public class Desktop(string name, string? iconPath = null)
 
     public string? IconPath { get; set; } = iconPath;
 
-    public List<Launcher> Launchers { get; set; } = [];
+    public ICollection<Launcher> Launchers { get; set; } = [];
 }

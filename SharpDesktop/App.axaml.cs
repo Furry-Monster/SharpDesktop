@@ -1,7 +1,9 @@
+using System.Linq;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Avalonia.ReactiveUI;
+using Microsoft.EntityFrameworkCore;
 using ReactiveUI;
 using SharpDesktop.Models;
 using SharpDesktop.Util;
@@ -58,7 +60,10 @@ namespace SharpDesktop
         {
             // 创建数据库
             using var dbContext = DatabaseContextFactory.CreateContext();
-            dbContext.Database.EnsureCreated();
+            if (dbContext.Database.GetPendingMigrations().Any())
+            {
+                dbContext.Database.Migrate(); //执行迁移
+            }
         }
     }
 }
