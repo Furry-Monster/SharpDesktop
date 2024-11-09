@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\viewmodels\\desktopviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\viewmodels\\desktopviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\models\\entity\\desktop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\models\\entity\\desktop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|c:\\users\\hanser no maoguai\\source\\repos\\sharpdesktop\\sharpdesktop\\models\\entity\\desktopitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08A6AC37-C209-47B3-A050-8BF94430F417}|SharpDesktop\\SharpDesktop.csproj|solutionrelative:sharpdesktop\\models\\entity\\desktopitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 270,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -37,6 +41,32 @@
               "Name": "ST:1:0:{08a1bf1d-7967-4afc-8253-1790862ab8c9}"
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Desktop.cs",
+              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\Entity\\Desktop.cs",
+              "RelativeDocumentMoniker": "SharpDesktop\\Models\\Entity\\Desktop.cs",
+              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\Entity\\Desktop.cs",
+              "RelativeToolTip": "SharpDesktop\\Models\\Entity\\Desktop.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T01:35:01.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DesktopItem.cs",
+              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\Entity\\DesktopItem.cs",
+              "RelativeDocumentMoniker": "SharpDesktop\\Models\\Entity\\DesktopItem.cs",
+              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\Models\\Entity\\DesktopItem.cs",
+              "RelativeToolTip": "SharpDesktop\\Models\\Entity\\DesktopItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T01:34:59.687Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
@@ -47,19 +77,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DesktopViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\ViewModels\\DesktopViewModel.cs",
-              "RelativeDocumentMoniker": "SharpDesktop\\ViewModels\\DesktopViewModel.cs",
-              "ToolTip": "C:\\Users\\Hanser no maoguai\\source\\repos\\SharpDesktop\\SharpDesktop\\ViewModels\\DesktopViewModel.cs",
-              "RelativeToolTip": "SharpDesktop\\ViewModels\\DesktopViewModel.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAcwFQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T06:02:44.408Z",
-              "EditorCaption": ""
             }
           ]
         },
