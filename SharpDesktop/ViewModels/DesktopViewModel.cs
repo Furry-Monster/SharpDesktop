@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Reactive;
 using System.Windows.Input;
+using Avalonia.Controls;
 using DialogHostAvalonia;
 using Microsoft.EntityFrameworkCore;
 using ReactiveUI;
 using SharpDesktop.Models;
 using SharpDesktop.Models.Entity;
+using SharpDesktop.Util;
 using SharpDesktop.Views.Dialog;
 
 namespace SharpDesktop.ViewModels;
@@ -48,7 +51,7 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
             if (Convert.ToBoolean(result))
             {
                 // 数据验证
-                //if (!File.Exists(dialog.IconPath.Text) || PathHelper.GetSuffix(dialog.IconPath.Text).ToLower() != "ico")
+                //if (!File.Exists(dialog.IconName.Text) || PathHelper.GetSuffix(dialog.IconName.Text).ToLower() != "ico")
                 //{
                 //    var messageDialog = new MessageDialog("文件不存在或不支持");
                 //    await DialogHost.Show(messageDialog);
@@ -57,7 +60,7 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
 
                 // 数据克隆
                 desktop.Name = dialog.DesktopName.Text!;
-                desktop.IconPath = dialog.IconPath.Text;
+                desktop.IconName = dialog.IconName.Text;
 
                 // 数据保存
                 db.Desktops.Update(desktop);
@@ -100,11 +103,53 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
 
         OpenLauncherCommand = ReactiveCommand.Create<Launcher>(launcher =>
         {
+            // 格式化路径
+            var path = PathHelper.FormatPath(launcher.Path ?? string.Empty);
 
+            // 初始化启动信息
+            var info = new ProcessStartInfo
+            {
+                FileName = path,
+                UseShellExecute = true,
+            };
+
+            // 启动应用
+            try
+            {
+                Process.Start(info);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"启动应用失败：{ex.Message}");
+            }
         });
 
-        EditLauncherCommand = ReactiveCommand.Create<Launcher>(launcher =>
+        EditLauncherCommand = ReactiveCommand.Create<Launcher>(async launcher =>
         {
+            await using var db = DatabaseContextFactory.CreateContext();
+
+            var dialog = new EditLauncherDialog()
+            {
+                DataContext = launcher
+            };
+
+            var result = await DialogHost.Show(dialog);
+
+            if (Convert.ToBoolean(result))
+            {
+                // 数据验证
+
+                // 数据克隆
+                launcher.Name = dialog.LauncherName.Text!;
+                launcher.Path = dialog.Path.Text;
+                launcher.BackgroundPath = dialog.BackgroundPath.Text;
+
+                // 数据保存
+                db.Launchers.Update(launcher);
+                db.SaveChanges();
+
+                Refresh();
+            }
 
         });
 
@@ -122,7 +167,26 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
 
         DeleteLauncherCommand = ReactiveCommand.Create<Launcher>(launcher =>
         {
+            if (CurrentDesktop == null) return;
 
+            using var db = DatabaseContextFactory.CreateContext();
+            CurrentDesktop.Launchers.Remove(launcher);
+            db.Launchers.Remove(launcher);
+            db.SaveChanges();
+
+            Refresh();
+        });
+
+        #endregion
+
+        //---------------
+        // 编辑器命令
+        //---------------
+        #region 编辑器命令
+
+        SelectFilePathCommand = ReactiveCommand.Create<object>(obj =>
+        {
+            //TODO 打开文件选择器
         });
 
         #endregion
@@ -143,6 +207,9 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
     public ReactiveCommand<Launcher, Unit> EditLauncherCommand { get; }
     public ReactiveCommand<Unit, Unit> AddLauncherCommand { get; }
     public ReactiveCommand<Launcher, Unit> DeleteLauncherCommand { get; }
+
+    // 编辑器命令
+    public ReactiveCommand<object, Unit> SelectFilePathCommand { get; }
 
 
     // 字段

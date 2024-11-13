@@ -2,15 +2,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-             xmlns:vm="clr-namespace:SharpDesktop.ViewModels"
-             xmlns:assist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
-             xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
-             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="750"
-             x:Class="SharpDesktop.Views.Dialog.EditDesktopDialog">
+             xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+             xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:assist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SharpDesktop.Views.Dialog.EditLauncherDialog">
 	<Border Height="450"
-            Width="300">
+			  Width="300">
 		<Grid RowDefinitions="Auto,*">
 			<!--顶部 标题栏-->
 			<Border Grid.Row="0"
@@ -34,23 +33,53 @@
 					<!--上半 编辑区域-->
 					<DockPanel Dock="Top">
 						<StackPanel>
-							<TextBox x:Name="DesktopName"
+							<TextBox x:Name="LauncherName"
 									 UseFloatingWatermark="True"
-									 assist:TextFieldAssist.Label="Desktop Name"
+									 assist:TextFieldAssist.Label="Launcher Name"
 									 Classes="outline"
 									 Theme="{StaticResource OutlineTextBox}"
 									 HorizontalAlignment="Stretch"
 									 Text="{Binding Name, Mode=OneWay}"
 									 x:CompileBindings="False"/>
 							<Grid ColumnDefinitions="*,Auto">
-								<TextBox x:Name="IconName"
+								<TextBox x:Name="Path"
 										 UseFloatingWatermark="True"
-										 assist:TextFieldAssist.Label="Icon Name"
+										 assist:TextFieldAssist.Label="Path"
 										 Classes="outline"
 										 Theme="{StaticResource OutlineTextBox}"
 										 HorizontalAlignment="Stretch"
-										 Text="{Binding IconName,Mode=OneWay}"
+										 Text="{Binding Path,Mode=OneWay}"
                                          x:CompileBindings="False"/>
+
+								<!--TODO: 实现文件选择器选择路径-->
+								<Button Grid.Column="1"
+										Background="Transparent"
+										Margin="5,7,0,0"
+                                        Click="OpenExecutableSelector"
+                                        Tag="{Binding ElementName=Path }">
+									<materialIcons:MaterialIcon Kind="Folder"
+																Width="20"
+															    Height="20"/>
+								</Button>
+							</Grid>
+							<Grid ColumnDefinitions="*,Auto">
+								<TextBox x:Name="BackgroundPath"
+                                         UseFloatingWatermark="True"
+                                         assist:TextFieldAssist.Label="Background Path"
+                                         Classes="outline"
+                                         Theme="{StaticResource OutlineTextBox}"
+                                         HorizontalAlignment="Stretch"
+                                         Text="{Binding BackgroundPath,Mode=OneWay}"
+                                         x:CompileBindings="False"/>
+								<Button Grid.Column="1"
+                                        Background="Transparent"
+                                        Margin="5,7,0,0"
+                                        Click="OpenImageSelector"
+                                        Tag="{Binding ElementName=BackgroundPath}">
+									<materialIcons:MaterialIcon Kind="Folder"
+                                                                Width="20"
+                                                                Height="20"/>
+								</Button>
 							</Grid>
 						</StackPanel>
 					</DockPanel>

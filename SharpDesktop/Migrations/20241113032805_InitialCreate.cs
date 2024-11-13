@@ -17,7 +17,7 @@ namespace SharpDesktop.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     Name = table.Column<string>(type: "TEXT", maxLength: 20, nullable: false),
-                    IconPath = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true)
+                    IconName = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true)
                 },
                 constraints: table =>
                 {

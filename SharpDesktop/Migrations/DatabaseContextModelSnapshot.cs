@@ -23,7 +23,7 @@ namespace SharpDesktop.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("IconPath")
+                    b.Property<string>("IconName")
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 

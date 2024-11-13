@@ -23,7 +23,7 @@ public class DatabaseContext(DbContextOptions<DatabaseContext> options) : DbCont
             entity.Property(e => e.Name)
                 .IsRequired()
                 .HasMaxLength(20);
-            entity.Property(e => e.IconPath)
+            entity.Property(e => e.IconName)
                 .HasMaxLength(100);
             entity.HasMany(e => e.Launchers)
                 .WithOne(e => e.Desktop)

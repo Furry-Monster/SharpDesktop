@@ -32,6 +32,9 @@
 											CommandParameter="{Binding}"
 											x:CompileBindings="False"
 											Background="Transparent">
+										<Image>
+
+										</Image>
 										<Button.ContextMenu>
 											<ContextMenu>
 												<MenuItem Header="编辑"
@@ -91,7 +94,7 @@
 										<materialIcons:MaterialIcon
 											Height="40"
 											Width="40"
-											Kind="Package"/>
+											Kind="{Binding IconName,FallbackValue=Package}"/>
 										<Button.ContextMenu>
 											<ContextMenu>
 												<MenuItem Header="编辑"

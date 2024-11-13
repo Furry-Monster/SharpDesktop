@@ -11,7 +11,7 @@ using SharpDesktop.Models;
 namespace SharpDesktop.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20241109084554_InitialCreate")]
+    [Migration("20241113032805_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -26,7 +26,7 @@ namespace SharpDesktop.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("IconPath")
+                    b.Property<string>("IconName")
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
