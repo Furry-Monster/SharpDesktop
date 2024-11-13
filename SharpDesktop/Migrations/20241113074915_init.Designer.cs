@@ -11,8 +11,8 @@ using SharpDesktop.Models;
 namespace SharpDesktop.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20241113032805_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20241113074915_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
