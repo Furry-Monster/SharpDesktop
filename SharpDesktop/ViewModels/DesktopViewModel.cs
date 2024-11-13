@@ -179,17 +179,6 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
 
         #endregion
 
-        //---------------
-        // 编辑器命令
-        //---------------
-        #region 编辑器命令
-
-        SelectFilePathCommand = ReactiveCommand.Create<object>(obj =>
-        {
-            //TODO 打开文件选择器
-        });
-
-        #endregion
     }
 
     // 路由接口实现
@@ -207,10 +196,6 @@ public class DesktopViewModel : ViewModelBase, IRoutableViewModel
     public ReactiveCommand<Launcher, Unit> EditLauncherCommand { get; }
     public ReactiveCommand<Unit, Unit> AddLauncherCommand { get; }
     public ReactiveCommand<Launcher, Unit> DeleteLauncherCommand { get; }
-
-    // 编辑器命令
-    public ReactiveCommand<object, Unit> SelectFilePathCommand { get; }
-
 
     // 字段
     private ObservableCollection<Desktop>? _desktops = [];

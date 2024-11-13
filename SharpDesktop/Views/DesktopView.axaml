@@ -8,6 +8,7 @@
              xmlns:view="using:SharpDesktop.Views"
              xmlns:dialogs="using:SharpDesktop.Views.Dialog"
              xmlns:vm="using:SharpDesktop.ViewModels"
+             xmlns:controls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SharpDesktop.Views.DesktopView"
              x:DataType="vm:DesktopViewModel">
@@ -31,10 +32,18 @@
 											Command="{Binding $parent[UserControl].DataContext.OpenLauncherCommand}"
 											CommandParameter="{Binding}"
 											x:CompileBindings="False"
-											Background="Transparent">
-										<Image>
-
-										</Image>
+											Background="DimGray">
+										<controls:Card Height="250" Width="140"
+													   Background="Transparent"
+                                                       VerticalAlignment="Top">
+											<StackPanel>
+												<Image Source="{Binding BackgroundPath,FallbackValue={},Converter={StaticResource PathToBitmap}}" />
+												<StackPanel Margin="12">
+													<TextBlock Classes="Headline6" Text="{Binding Name}" />
+													<TextBlock Margin="0,8,0,0" TextWrapping="Wrap" Text="{Binding Path}" />
+												</StackPanel>
+											</StackPanel>
+										</controls:Card>
 										<Button.ContextMenu>
 											<ContextMenu>
 												<MenuItem Header="编辑"

@@ -1,0 +1,7 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:SharpDesktop.Util.Converter">
+	<local:PathToBitmap x:Key="PathToBitmap"/>
+	<local:PathToIcon x:Key="PathToIcon"/>
+	<local:PathToFileName x:Key="PathToFileName"/>
+</ResourceDictionary>

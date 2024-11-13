@@ -19,4 +19,12 @@
 		<StyleInclude Source="/Styles/MicrosoftIcons.axaml"/>
 	</Application.Styles>
 
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceInclude Source="Util/Converter/Converter.axaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Application.Resources>
+
 </Application>
