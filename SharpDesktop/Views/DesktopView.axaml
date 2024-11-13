@@ -37,9 +37,12 @@
 													   Background="Transparent"
                                                        VerticalAlignment="Top">
 											<StackPanel>
-												<Image Source="{Binding BackgroundPath,FallbackValue={},Converter={StaticResource PathToBitmap}}" />
+												<Image IsVisible="{Binding BackgroundPath,Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+                                                    Source="{Binding BackgroundPath,FallbackValue={},Converter={StaticResource PathToBitmap}}" />
+												<Image IsVisible="{Binding BackgroundPath,Converter={x:Static StringConverters.IsNullOrEmpty}}"
+                                                    Source="{Binding Path,FallbackValue={},Converter={StaticResource PathToIcon}}"></Image>
 												<StackPanel Margin="12">
-													<TextBlock Classes="Headline6" Text="{Binding Name}" />
+													<TextBlock Classes="Headline6" Text="{Binding Name}"/>
 													<TextBlock Margin="0,8,0,0" TextWrapping="Wrap" Text="{Binding Path}" />
 												</StackPanel>
 											</StackPanel>
