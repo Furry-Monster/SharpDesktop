@@ -99,13 +99,11 @@
 									<Button Command="{Binding $parent[UserControl].DataContext.SelectDesktopCommand}"
 											CommandParameter="{Binding}"
                                             x:CompileBindings="False"
-											Height="80"
-											Width="80"
+											Height="80" Width="80"
 											Background="Transparent"
 											Margin="0,2,0,0">
 										<materialIcons:MaterialIcon
-											Height="40"
-											Width="40"
+											Height="40" Width="40"
 											Kind="{Binding IconName,FallbackValue=Package}"/>
 										<Button.ContextMenu>
 											<ContextMenu>
@@ -132,8 +130,7 @@
 								Command="{Binding AddDesktopCommand}"
 								Margin="0,0,0,0">
 							<materialIcons:MaterialIcon
-								Height="40"
-								Width="40"
+								Height="40" Width="40"
 								Kind="Add"/>
 						</Button>
 					</DockPanel>

@@ -2,6 +2,7 @@
 using SharpDesktop.Models.Entity;
 using System;
 using System.Collections.ObjectModel;
+using System.Reactive;
 using System.Windows.Input;
 
 
@@ -15,34 +16,53 @@ public class TerminalViewModel : ViewModelBase, IRoutableViewModel
     {
         HostScreen = hostScreen;
 
-        QuickCommandList =
-        [
-            new CommandItem("ls", "ls -al", "显示当前目录下的文件列表"),
-            new CommandItem("cd", @"cd /d D:\", "切换到 D 盘根目录")
-        ];
+        //---------------
+        // 选择器命令
+        //---------------
+        #region 选择器命令实现
+        EditTerminalCommand = ReactiveCommand.Create<Terminal>(terminal =>
+        {
+            //TODO: Edit the selected terminal
+        });
+
+        DeleteTerminalCommand = ReactiveCommand.Create<Terminal>(terminal =>
+        {
+            //TODO: Delete the selected terminal
+        });
+
+        SelectTerminalCommand = ReactiveCommand.Create<Terminal>(terminal =>
+        {
+            // TODO: Select the selected terminal
+        });
+
+        AddTerminalCommand = ReactiveCommand.Create(() =>
+        {
+            //TODO: Add a new terminal
+        });
+        #endregion
 
         //---------------
-        // 工具栏命令
+        // cmd命令
         //---------------
-        #region 工具栏命令实现
-        NewConsoleCommand = ReactiveCommand.Create(() =>
+        #region 选择器命令实现
+        AddCmdCommand = ReactiveCommand.Create(() =>
         {
-            //TODO: Open a new console window
+            //TODO: Add a new command
         });
 
-        NewPowerShellCommand = ReactiveCommand.Create(() =>
+        EditCmdCommand = ReactiveCommand.Create<Command>(command =>
         {
-            //TODO: Open a new PowerShell window
+            //TODO: Edit the selected command
         });
 
-        NewGitBashCommand = ReactiveCommand.Create(() =>
+        RunCmdCommand = ReactiveCommand.Create<Command>(command =>
         {
-            //TODO: Open a new git-bash window
+            //TODO: Run the selected command
         });
 
-        ClearCommand = ReactiveCommand.Create(() =>
+        DeleteCmdCommand = ReactiveCommand.Create<Command>(command =>
         {
-            //TODO: Clear the terminal output
+            //TODO: Delete the selected command
         });
         #endregion
     }
@@ -51,19 +71,46 @@ public class TerminalViewModel : ViewModelBase, IRoutableViewModel
     public string? UrlPathSegment { get; } = Guid.NewGuid().ToString()[..5];
     public IScreen HostScreen { get; }
 
-    // 工具栏命令
-    public ICommand NewConsoleCommand { get; private set; }
-    public ICommand NewPowerShellCommand { get; private set; }
-    public ICommand NewGitBashCommand { get; private set; }
-    public ICommand ClearCommand { get; private set; }
+    // 选择器命令
+    public ReactiveCommand<Terminal, Unit> EditTerminalCommand { get; private set; }
+    public ReactiveCommand<Terminal, Unit> DeleteTerminalCommand { get; private set; }
+    public ReactiveCommand<Terminal, Unit> SelectTerminalCommand { get; private set; }
+    public ReactiveCommand<Unit, Unit> AddTerminalCommand { get; private set; }
 
+    // Command列表命令
+    public ReactiveCommand<Unit, Unit> AddCmdCommand { get; private set; }
+    public ReactiveCommand<Command, Unit> EditCmdCommand { get; private set; }
+    public ReactiveCommand<Command, Unit> RunCmdCommand { get; private set; }
+    public ReactiveCommand<Command, Unit> DeleteCmdCommand { get; private set; }
 
+    // 字段
+    private ObservableCollection<Terminal>? _terminalList;
 
-    private ObservableCollection<CommandItem>? _quickCommandList;
-
-    public ObservableCollection<CommandItem>? QuickCommandList
+    public ObservableCollection<Terminal>? TerminalList
     {
-        get => _quickCommandList;
-        set => this.RaiseAndSetIfChanged(ref _quickCommandList, value);
+        get => _terminalList;
+        set => this.RaiseAndSetIfChanged(ref _terminalList, value);
+    }
+
+    private Terminal? _selectedTerminal;
+
+    public Terminal? SelectedTerminal
+    {
+        get => _selectedTerminal;
+        set => this.RaiseAndSetIfChanged(ref _selectedTerminal, value);
+    }
+
+    private ObservableCollection<Command>? _commandList;
+
+    public ObservableCollection<Command>? CommandList
+    {
+        get => _commandList;
+        set => this.RaiseAndSetIfChanged(ref _commandList, value);
+    }
+
+    // 方法
+    public void Refresh()
+    {
+        //TODO: Refresh the terminal list and command list
     }
 }

@@ -16,22 +16,37 @@
                 Dock="Left"
                 Width="350"
                 Background="Gray">
-				<ItemsControl ItemsSource="{Binding QuickCommandList}">
+				<ItemsControl ItemsSource="{Binding CommandList}">
 					<ItemsControl.ItemTemplate>
 						<DataTemplate>
-							<Border Margin="8,12,8,0"
-                                    Background="DimGray"
-                                    Padding="5">
-								<StackPanel Orientation="Horizontal">
-									<Button Background="Gray"
-											Width="322"
-                                            Content="{Binding Name}"
-                                            controls:ToolTip.Tip="{Binding Description}"/>
-								</StackPanel>
-							</Border>
+							<Button Command="{Binding $parent[UserControl].DataContext.RunCmdCommand}"
+                                    CommandParameter="{Binding}"
+                                    x:CompileBindings="False"
+                                    Content="{Binding Name}">
+								<Button.ContextMenu>
+									<ContextMenu>
+										<MenuItem Header="编辑"
+                                                  Command="{Binding $parent[UserControl].DataContext.EditTerminalCommand}"
+                                                  CommandParameter="{Binding}"
+                                                  x:CompileBindings="False"/>
+										<MenuItem Header="删除"
+                                                  Command="{Binding $parent[UserControl].DataContext.DeleteTerminalCommand}"
+                                                  CommandParameter="{Binding}"
+                                                  x:CompileBindings="False"/>
+									</ContextMenu>
+								</Button.ContextMenu>
+							</Button>
 						</DataTemplate>
 					</ItemsControl.ItemTemplate>
 				</ItemsControl>
+				<DockPanel.ContextMenu>
+					<ContextMenu>
+						<MenuItem Header="新建指令"
+                                  Command="{Binding AddCmdCommand}"/>
+						<MenuItem Header="刷新"
+                                  Command="{Binding Refresh}"/>
+					</ContextMenu>
+				</DockPanel.ContextMenu>
 			</DockPanel>
 
 			<!-- 终端界面 -->
@@ -46,52 +61,55 @@
 				</TextBlock>
 			</DockPanel>
 
-			<!-- 终端工具栏 -->
+			<!-- 终端选择器 -->
 			<DockPanel
                 Grid.Column="2"
                 Dock="Right"
                 Width="80"
                 Background="DimGray">
 				<DockPanel LastChildFill="False">
-					<StackPanel Orientation="Vertical">
-						<Button Background="Transparent"
-                                Command="{Binding NewConsoleCommand}"
-                                Margin="10,15,10,0">
+					<Grid RowDefinitions="*,Auto">
+						<ScrollViewer VerticalScrollBarVisibility="Hidden">
+							<ItemsControl ItemsSource="{Binding TerminalList}">
+								<ItemsControl.ItemTemplate>
+									<DataTemplate>
+										<Button Command="{Binding $parent[UserControl].DataContext.SelectTerminalCommand}"
+                                                CommandParameter="{Binding}"
+                                                x:CompileBindings="False"
+                                                Height="80" Width="80"
+                                                Background="Transparent"
+                                                Margin="0,2,0,0">
+											<materialIcons:MaterialIcon
+                                                Height="40" Width="40"
+                                                Kind="{Binding Name,FallbackValue=Terminal}"/>
+											<Button.ContextMenu>
+												<ContextMenu>
+													<MenuItem Header="编辑"
+                                                              Command="{Binding $parent[UserControl].DataContext.EditTerminalCommand}"
+                                                              CommandParameter="{Binding}"
+                                                              x:CompileBindings="False"/>
+													<MenuItem Header="删除"
+                                                              Command="{Binding $parent[UserControl].DataContext.DeleteTerminalCommand}"
+                                                              CommandParameter="{Binding}"
+                                                              x:CompileBindings="False"/>
+												</ContextMenu>
+											</Button.ContextMenu>
+										</Button>
+									</DataTemplate>
+								</ItemsControl.ItemTemplate>
+							</ItemsControl>
+						</ScrollViewer>
+						<Button Grid.Row="1"
+                                Background="Transparent"
+                                Command="{Binding AddTerminalCommand}"
+                                Margin="0,0,0,0">
 							<materialIcons:MaterialIcon
                                 Height="40"
                                 Width="40"
-                                Kind="ConsoleLine"/>
-							<ToolTip.Tip>新建Cmd控制台</ToolTip.Tip>
-						</Button>
-						<Button Background="Transparent"
-                                Command="{Binding NewPowerShellCommand}"
-                                Margin="10,15,10,0">
-							<materialIcons:MaterialIcon
-                                Height="40"
-                                Width="40"
-                                Kind="Powershell"/>
-							<ToolTip.Tip>新建Powershell终端</ToolTip.Tip>
-						</Button>
-						<Button Background="Transparent"
-                                Command="{Binding NewGitBashCommand}"
-                                Margin="10,15,10,0">
-							<materialIcons:MaterialIcon
-                                Height="40"
-                                Width="40"
-                                Kind="Git"/>
-							<ToolTip.Tip>新建GitBash终端</ToolTip.Tip>
-						</Button>
-						<Button Background="Transparent"
-                                Command="{Binding ClearCommand}"
-                                Margin="10,15,10,0">
-							<materialIcons:MaterialIcon
-                                Height="40"
-                                Width="40"
-                                Kind="GarbageCan"/>
-							<ToolTip.Tip>清除所有终端输出</ToolTip.Tip>
+                                Kind="Add"/>
 						</Button>
 
-					</StackPanel>
+					</Grid>
 				</DockPanel>
 			</DockPanel>
 		</Grid>
